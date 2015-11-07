@@ -4,9 +4,6 @@ import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
-/**
- * Created by Naoya on 2015/11/04.
- */
 public interface RetroFitApi {
     /**
      * アノテーションでGET/POST/PUT/DELETEを指定。
