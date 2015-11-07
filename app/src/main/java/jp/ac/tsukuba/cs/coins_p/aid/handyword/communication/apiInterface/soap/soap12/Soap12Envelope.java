@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface.soap.soap12;
 
 import java.util.HashMap;
 import java.util.Map;

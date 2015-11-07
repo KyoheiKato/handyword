@@ -1,19 +1,18 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface.soap.getDicItemReferenceRanking;
 
 import java.util.HashMap;
 import java.util.Map;
 //import javax.annotation.Generated;
 
 //@Generated("org.jsonschema2pojo")
-public class GetDicItemResult {
+public class ItemReferenceInfo {
 
     private String DicID;
     private String ItemID;
-    private String LocID;
+    private String DicName;
     private String Title;
-    private String Head;
-    private String Body;
-    private Map<String, Object> additionalProperties = new HashMap<>();
+    private String Count;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      *
@@ -54,19 +53,19 @@ public class GetDicItemResult {
     /**
      *
      * @return
-     * The LocID
+     * The DicName
      */
-    public String getLocID() {
-        return LocID;
+    public String getDicName() {
+        return DicName;
     }
 
     /**
      *
-     * @param LocID
-     * The LocID
+     * @param DicName
+     * The DicName
      */
-    public void setLocID(String LocID) {
-        this.LocID = LocID;
+    public void setDicName(String DicName) {
+        this.DicName = DicName;
     }
 
     /**
@@ -90,37 +89,19 @@ public class GetDicItemResult {
     /**
      *
      * @return
-     * The Head
+     * The Count
      */
-    public String getHead() {
-        return Head;
+    public String getCount() {
+        return Count;
     }
 
     /**
      *
-     * @param Head
-     * The Head
+     * @param Count
+     * The Count
      */
-    public void setHead(String Head) {
-        this.Head = Head;
-    }
-
-    /**
-     *
-     * @return
-     * The Body
-     */
-    public String getBody() {
-        return Body;
-    }
-
-    /**
-     *
-     * @param Body
-     * The Body
-     */
-    public void setBody(String Body) {
-        this.Body = Body;
+    public void setCount(String Count) {
+        this.Count = Count;
     }
 
     public Map<String, Object> getAdditionalProperties() {

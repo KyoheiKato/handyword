@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface.soap.getDicItem;
 import java.util.HashMap;
 import java.util.Map;
 //import javax.annotation.Generated;
@@ -7,7 +7,7 @@ import java.util.Map;
 public class GetDicItemResponse {
 
     private String Xmlns;
-    private GetDicItemResult GetDicItemResult;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.apiInterface.soap.getDicItem.GetDicItemResult GetDicItemResult;
     private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
