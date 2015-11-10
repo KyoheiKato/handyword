@@ -6,7 +6,7 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class RestApi {
+public class results {
 
     private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicItem.GetDicItemResult GetDicItemResult;
     private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.GetDicInfoResult GetDicInfoResult;

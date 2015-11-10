@@ -1,11 +1,12 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicItem.GetDicItemResult;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.SearchDicItemResult;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
-public interface RetroFitApi {
+public interface dejizoApi {
     /**
      * アノテーションでGET/POST/PUT/DELETEを指定。
      * カッコ内はリクエストのホスト部以降を指定。
@@ -28,5 +29,5 @@ public interface RetroFitApi {
     @GET("/GetDicItemLite")
     void getDicItem(@Query("Dic") String dic, @Query("Item") String item,
                     @Query("Loc") String loc, @Query("Prof") String prof,
-                    Callback<SearchDicItemResult> cb);
+                    Callback<GetDicItemResult> cb);
 }

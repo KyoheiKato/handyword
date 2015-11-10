@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         CommunicationSample communicationSample = new CommunicationSample();
+        communicationSample.CommunicationSample();
         communicationSample.sampleQuery();
     }
 
