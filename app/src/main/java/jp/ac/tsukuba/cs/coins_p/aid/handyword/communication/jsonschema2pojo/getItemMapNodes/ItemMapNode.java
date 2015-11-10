@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getItemMapNodes;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class ItemMapNode {
     private String RefItemID;
     private String RefLocID;
     private String ChildCount;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getItemMapNodes.ChildNodes ChildNodes;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ChildNodes ChildNodes;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -93,7 +93,7 @@ public class ItemMapNode {
      * @return
      *     The ChildNodes
      */
-    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getItemMapNodes.ChildNodes getChildNodes() {
+    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ChildNodes getChildNodes() {
         return ChildNodes;
     }
 
@@ -102,7 +102,7 @@ public class ItemMapNode {
      * @param ChildNodes
      *     The ChildNodes
      */
-    public void setChildNodes(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getItemMapNodes.ChildNodes ChildNodes) {
+    public void setChildNodes(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ChildNodes ChildNodes) {
         this.ChildNodes = ChildNodes;
     }
 

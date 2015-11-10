@@ -1,7 +1,6 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicItem.GetDicItemResult;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.SearchDicItemResult;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.SearchDicItemResult;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Query;
@@ -20,9 +19,14 @@ public interface RetroFitApi {
      * コールバックにPOJOのオブジェクトを指定するとPOJO変換してくれる。
      */
     @GET("/SearchDicItemLite")
-    void getSearchDicItem(@Query("Dic") String dic, @Query("Word") String word,
-                          @Query("Scope") String scope, @Query("Match") String match,
-                          @Query("Merge") String merge, @Query("Prof") String prof,
-                          @Query("PageSize") String pageSize, @Query("PageIndex") String pageIndex,
-                          Callback<SearchDicItemResult> cb);
+    void getSearchDicItemResult(@Query("Dic") String dic, @Query("Word") String word,
+                                @Query("Scope") String scope, @Query("Match") String match,
+                                @Query("Merge") String merge, @Query("Prof") String prof,
+                                @Query("PageSize") String pageSize, @Query("PageIndex") String pageIndex,
+                                Callback<SearchDicItemResult> cb);
+
+    @GET("/GetDicItemLite")
+    void getDicItem(@Query("Dic") String dic, @Query("Item") String item,
+                    @Query("Loc") String loc, @Query("Prof") String prof,
+                    Callback<SearchDicItemResult> cb);
 }

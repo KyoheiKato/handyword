@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +15,10 @@ public class DicInfo {
     private String Publisher;
     private String Abbrev;
     private String StartItemID;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.ScopeList ScopeList;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOptionList SearchOptionList;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.ScopeList ScopeList;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOptionList SearchOptionList;
     private String DefSearchOptionIndex;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.ItemMapList ItemMapList;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.ItemMapList ItemMapList;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -134,7 +134,7 @@ public class DicInfo {
      * @return
      *     The ScopeList
      */
-    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.ScopeList getScopeList() {
+    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.ScopeList getScopeList() {
         return ScopeList;
     }
 
@@ -143,7 +143,7 @@ public class DicInfo {
      * @param ScopeList
      *     The ScopeList
      */
-    public void setScopeList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.ScopeList ScopeList) {
+    public void setScopeList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.ScopeList ScopeList) {
         this.ScopeList = ScopeList;
     }
 
@@ -152,7 +152,7 @@ public class DicInfo {
      * @return
      *     The SearchOptionList
      */
-    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOptionList getSearchOptionList() {
+    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOptionList getSearchOptionList() {
         return SearchOptionList;
     }
 
@@ -161,7 +161,7 @@ public class DicInfo {
      * @param SearchOptionList
      *     The SearchOptionList
      */
-    public void setSearchOptionList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOptionList SearchOptionList) {
+    public void setSearchOptionList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOptionList SearchOptionList) {
         this.SearchOptionList = SearchOptionList;
     }
 
@@ -188,7 +188,7 @@ public class DicInfo {
      * @return
      *     The ItemMapList
      */
-    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.ItemMapList getItemMapList() {
+    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.ItemMapList getItemMapList() {
         return ItemMapList;
     }
 
@@ -197,7 +197,7 @@ public class DicInfo {
      * @param ItemMapList
      *     The ItemMapList
      */
-    public void setItemMapList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.ItemMapList ItemMapList) {
+    public void setItemMapList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.ItemMapList ItemMapList) {
         this.ItemMapList = ItemMapList;
     }
 

@@ -5,7 +5,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 /**
- * REST通信のコールバック
+ * REST騾壻ｿ｡縺ｮ繧ｳ繝ｼ繝ｫ繝舌ャ繧ｯ
  */
 public class RequestCallback<T> implements Callback<T> {
 
@@ -15,13 +15,13 @@ public class RequestCallback<T> implements Callback<T> {
         mListener = listener;
     }
 
-    // 正常終了時に呼ばれる
+    // 豁｣蟶ｸ邨ゆｺ�譎ゅ↓蜻ｼ縺ｰ繧後ｋ
     @Override
     public void success(T object, Response response){
         mListener.onSuccess(object);
     }
 
-    // 異常終了時に呼ばれる
+    // 逡ｰ蟶ｸ邨ゆｺ�譎ゅ↓蜻ｼ縺ｰ繧後ｋ
     @Override
     public void failure(RetrofitError error){
         mListener.onFailure(error);

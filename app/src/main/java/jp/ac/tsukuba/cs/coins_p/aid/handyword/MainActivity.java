@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.CommunicationSample;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        CommunicationSample communicationSample = new CommunicationSample();
+        communicationSample.sampleQuery();
     }
 
     @Override

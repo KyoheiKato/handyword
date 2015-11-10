@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 @Generated("org.jsonschema2pojo")
 public class DicInfoList {
 
-    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfo> DicInfo = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfo>();
+    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfo> DicInfo = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfo>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -19,7 +19,7 @@ public class DicInfoList {
      * @return
      *     The DicInfo
      */
-    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfo> getDicInfo() {
+    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfo> getDicInfo() {
         return DicInfo;
     }
 
@@ -28,7 +28,7 @@ public class DicInfoList {
      * @param DicInfo
      *     The DicInfo
      */
-    public void setDicInfo(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfo> DicInfo) {
+    public void setDicInfo(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfo> DicInfo) {
         this.DicInfo = DicInfo;
     }
 

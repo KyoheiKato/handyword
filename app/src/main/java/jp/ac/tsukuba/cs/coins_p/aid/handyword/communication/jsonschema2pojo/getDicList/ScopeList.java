@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 @Generated("org.jsonschema2pojo")
 public class ScopeList {
 
-    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.Scope> Scope = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.Scope>();
+    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.Scope> Scope = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.Scope>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -19,7 +19,7 @@ public class ScopeList {
      * @return
      *     The Scope
      */
-    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.Scope> getScope() {
+    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.Scope> getScope() {
         return Scope;
     }
 
@@ -28,7 +28,7 @@ public class ScopeList {
      * @param Scope
      *     The Scope
      */
-    public void setScope(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.Scope> Scope) {
+    public void setScope(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.Scope> Scope) {
         this.Scope = Scope;
     }
 

@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class SearchOption {
+public class ItemMapNode_ {
 
     private String XmlnsD5p1;
     private String D5p1Nil;

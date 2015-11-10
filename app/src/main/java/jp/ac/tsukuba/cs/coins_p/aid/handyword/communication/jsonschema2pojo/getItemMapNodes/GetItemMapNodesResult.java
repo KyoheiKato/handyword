@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,13 +7,12 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class SearchDicItemResult {
+public class GetItemMapNodesResult {
 
     private String Xmlns;
     private String ErrorMessage;
-    private String TotalHitCount;
-    private String ItemCount;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.TitleList TitleList;
+    private String NodeCount;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.NodeList NodeList;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -55,55 +54,37 @@ public class SearchDicItemResult {
     /**
      * 
      * @return
-     *     The TotalHitCount
+     *     The NodeCount
      */
-    public String getTotalHitCount() {
-        return TotalHitCount;
+    public String getNodeCount() {
+        return NodeCount;
     }
 
     /**
      * 
-     * @param TotalHitCount
-     *     The TotalHitCount
+     * @param NodeCount
+     *     The NodeCount
      */
-    public void setTotalHitCount(String TotalHitCount) {
-        this.TotalHitCount = TotalHitCount;
-    }
-
-    /**
-     * 
-     * @return
-     *     The ItemCount
-     */
-    public String getItemCount() {
-        return ItemCount;
-    }
-
-    /**
-     * 
-     * @param ItemCount
-     *     The ItemCount
-     */
-    public void setItemCount(String ItemCount) {
-        this.ItemCount = ItemCount;
+    public void setNodeCount(String NodeCount) {
+        this.NodeCount = NodeCount;
     }
 
     /**
      * 
      * @return
-     *     The TitleList
+     *     The NodeList
      */
-    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.TitleList getTitleList() {
-        return TitleList;
+    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.NodeList getNodeList() {
+        return NodeList;
     }
 
     /**
      * 
-     * @param TitleList
-     *     The TitleList
+     * @param NodeList
+     *     The NodeList
      */
-    public void setTitleList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.TitleList TitleList) {
-        this.TitleList = TitleList;
+    public void setNodeList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.NodeList NodeList) {
+        this.NodeList = NodeList;
     }
 
     public Map<String, Object> getAdditionalProperties() {

@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 @Generated("org.jsonschema2pojo")
 public class SearchOptionList {
 
-    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOption> SearchOption = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOption>();
+    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOption> SearchOption = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOption>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -19,7 +19,7 @@ public class SearchOptionList {
      * @return
      *     The SearchOption
      */
-    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOption> getSearchOption() {
+    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOption> getSearchOption() {
         return SearchOption;
     }
 
@@ -28,7 +28,7 @@ public class SearchOptionList {
      * @param SearchOption
      *     The SearchOption
      */
-    public void setSearchOption(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.SearchOption> SearchOption) {
+    public void setSearchOption(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.SearchOption> SearchOption) {
         this.SearchOption = SearchOption;
     }
 

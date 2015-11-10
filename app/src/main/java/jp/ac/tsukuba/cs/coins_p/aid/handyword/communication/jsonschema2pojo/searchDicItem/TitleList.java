@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 @Generated("org.jsonschema2pojo")
 public class TitleList {
 
-    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.DicItemTitle> DicItemTitle = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.DicItemTitle>();
+    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle> DicItemTitle = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -19,7 +19,7 @@ public class TitleList {
      * @return
      *     The DicItemTitle
      */
-    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.DicItemTitle> getDicItemTitle() {
+    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle> getDicItemTitle() {
         return DicItemTitle;
     }
 
@@ -28,7 +28,7 @@ public class TitleList {
      * @param DicItemTitle
      *     The DicItemTitle
      */
-    public void setDicItemTitle(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.searchDicItem.DicItemTitle> DicItemTitle) {
+    public void setDicItemTitle(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle> DicItemTitle) {
         this.DicItemTitle = DicItemTitle;
     }
 

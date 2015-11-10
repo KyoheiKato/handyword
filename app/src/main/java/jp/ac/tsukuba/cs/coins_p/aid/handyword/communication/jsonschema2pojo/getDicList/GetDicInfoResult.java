@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class GetDicInfoResult {
     private String Xmlns;
     private String ErrorMessage;
     private String DicCount;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfoList DicInfoList;
+    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfoList DicInfoList;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -74,7 +74,7 @@ public class GetDicInfoResult {
      * @return
      *     The DicInfoList
      */
-    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfoList getDicInfoList() {
+    public jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfoList getDicInfoList() {
         return DicInfoList;
     }
 
@@ -83,7 +83,7 @@ public class GetDicInfoResult {
      * @param DicInfoList
      *     The DicInfoList
      */
-    public void setDicInfoList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicList.DicInfoList DicInfoList) {
+    public void setDicInfoList(jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicList.DicInfoList DicInfoList) {
         this.DicInfoList = DicInfoList;
     }
 

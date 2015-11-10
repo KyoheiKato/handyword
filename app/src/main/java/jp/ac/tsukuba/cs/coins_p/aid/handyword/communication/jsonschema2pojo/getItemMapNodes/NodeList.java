@@ -1,5 +1,5 @@
 
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getItemMapNodes;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,9 +9,9 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class ChildNodes {
+public class NodeList {
 
-    private List<ItemMapNode_> ItemMapNode = new ArrayList<ItemMapNode_>();
+    private List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ItemMapNode> ItemMapNode = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ItemMapNode>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -19,7 +19,7 @@ public class ChildNodes {
      * @return
      *     The ItemMapNode
      */
-    public List<ItemMapNode_> getItemMapNode() {
+    public List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ItemMapNode> getItemMapNode() {
         return ItemMapNode;
     }
 
@@ -28,7 +28,7 @@ public class ChildNodes {
      * @param ItemMapNode
      *     The ItemMapNode
      */
-    public void setItemMapNode(List<ItemMapNode_> ItemMapNode) {
+    public void setItemMapNode(List<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getItemMapNodes.ItemMapNode> ItemMapNode) {
         this.ItemMapNode = ItemMapNode;
     }
 
