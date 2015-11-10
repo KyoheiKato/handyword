@@ -3,7 +3,8 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit.RequestCallback;
+import com.mobprofs.retrofit.converters.SimpleXmlConverter;
+
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit.RequestListener;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit.RetroFitApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.rest.getDicItem.GetDicItemResult;
@@ -15,6 +16,7 @@ public class CommunicationTest extends AppCompatActivity {
 
     RestAdapter restAdapter = new RestAdapter.Builder()
         .setEndpoint(API)
+        .setConverter(new SimpleXmlConverter())
         .build();
     RetroFitApi api = restAdapter.create(RetroFitApi.class);
     //api.getSearchDicItem("EJdict", "dict", "HEADWORD", "STARTWITH", "AND", "XHTML", "20", "0");
