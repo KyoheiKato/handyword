@@ -2,14 +2,13 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
 
 import android.util.Log;
 
-import com.mobprofs.retrofit.converters.SimpleXmlConverter;
-
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit.RetroFitApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.SearchDicItemResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import retrofit.converter.SimpleXMLConverter;
 
 public class CommunicationSample {
 
@@ -20,7 +19,7 @@ public class CommunicationSample {
         SearchDicItemResult searchDicItemResult;
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(API)
-                .setConverter(new SimpleXmlConverter())
+                .setConverter(new SimpleXMLConverter())
                 .build();
         retroFitApi = restAdapter.create(RetroFitApi.class);
 
