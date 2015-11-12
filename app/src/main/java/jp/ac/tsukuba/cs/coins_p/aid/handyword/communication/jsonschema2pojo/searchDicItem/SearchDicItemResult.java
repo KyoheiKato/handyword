@@ -1,19 +1,35 @@
 
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem;
 
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
+
+@Root(name = "SearchDicItemResult")
 public class SearchDicItemResult {
 
+    @Attribute(required = false)
     private String Xmlns;
+
+    @Element(name = "ErrorMessage", required = false)
     private String ErrorMessage;
+
+    @Element(name = "TotalHitCount", required = false)
     private String TotalHitCount;
+
+    @Element(name = "ItemCount", required = false)
     private String ItemCount;
-    private jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.TitleList TitleList;
+
+    @Element(name = "TitleList", required = false)
+    private TitleList TitleList;
+
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**

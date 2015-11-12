@@ -1,17 +1,31 @@
 
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem;
 
+import android.util.Xml;
+
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
+
+@Root(name = "DicItemTitle")
 public class DicItemTitle {
 
+    @Element(name = "ItemID", required = false)
     private String ItemID;
+
+    @Element(name = "LocID", required = false)
     private String LocID;
-    private String Title;
+
+    @Element(name = "Title", required = false, data = true)
+    private Xml Title;
+
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -55,7 +69,7 @@ public class DicItemTitle {
      * @return
      *     The Title
      */
-    public String getTitle() {
+    public Xml getTitle() {
         return Title;
     }
 
@@ -64,7 +78,7 @@ public class DicItemTitle {
      * @param Title
      *     The Title
      */
-    public void setTitle(String Title) {
+    public void setTitle(Xml Title) {
         this.Title = Title;
     }
 
