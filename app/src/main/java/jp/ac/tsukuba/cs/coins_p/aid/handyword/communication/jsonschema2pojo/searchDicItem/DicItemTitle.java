@@ -24,7 +24,7 @@ public class DicItemTitle {
     private String LocID;
 
     @Element(name = "Title", required = false, data = true)
-    private Xml Title;
+    private String Title;
 
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -69,7 +69,7 @@ public class DicItemTitle {
      * @return
      *     The Title
      */
-    public Xml getTitle() {
+    public String getTitle() {
         return Title;
     }
 
@@ -78,7 +78,7 @@ public class DicItemTitle {
      * @param Title
      *     The Title
      */
-    public void setTitle(Xml Title) {
+    public void setTitle(String Title) {
         this.Title = Title;
     }
 
