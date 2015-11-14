@@ -4,6 +4,7 @@ import android.util.Log;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit.dejizoApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicItem.GetDicItemResult;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.SearchDicItemResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -15,11 +16,13 @@ public class CommunicationSample {
 
     private static final String API = "http://public.dejizo.jp/NetDicV09.asmx";
     private dejizoApi dejizoApi;
+    private SimpleXMLConverter simpleXMLConverter = new SimpleXMLConverter();
 
     public void CommunicationSample() {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(API)
-                .setConverter(new SimpleXMLConverter())
+                .setConverter(simpleXMLConverter)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
         dejizoApi = restAdapter.create(dejizoApi.class);
     }

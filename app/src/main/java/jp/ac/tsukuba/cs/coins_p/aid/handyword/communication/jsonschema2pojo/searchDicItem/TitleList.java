@@ -1,6 +1,8 @@
 
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem;
 
+import org.simpleframework.xml.ElementList;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +13,8 @@ import javax.annotation.Generated;
 @Generated("org.jsonschema2pojo")
 public class TitleList {
 
-    private List<DicItemTitle> DicItemTitle = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle>();
+    @ElementList(type = DicItemTitle.class)
+    public List<DicItemTitle> DicItemTitle = new ArrayList<jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**

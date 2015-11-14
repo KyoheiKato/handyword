@@ -8,9 +8,9 @@ import org.simpleframework.xml.Root;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Generated;
+//import javax.annotation.Generated;
 
-@Generated("org.jsonschema2pojo")
+//@Generated("org.jsonschema2pojo")
 
 @Root(name = "SearchDicItemResult")
 public class SearchDicItemResult {
