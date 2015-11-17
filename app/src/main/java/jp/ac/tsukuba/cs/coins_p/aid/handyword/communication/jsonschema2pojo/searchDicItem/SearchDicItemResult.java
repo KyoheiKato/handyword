@@ -12,7 +12,7 @@ import java.util.Map;
 
 //@Generated("org.jsonschema2pojo")
 
-@Root(name = "SearchDicItemResult")
+@Root(name = "SearchDicItemResult", strict = false)
 public class SearchDicItemResult {
 
     @Attribute(required = false)

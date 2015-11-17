@@ -18,7 +18,7 @@ public class CommunicationSample {
     private dejizoApi dejizoApi;
     private SimpleXMLConverter simpleXMLConverter = new SimpleXMLConverter();
 
-    public void CommunicationSample() {
+    public CommunicationSample() {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(API)
                 .setConverter(simpleXMLConverter)
@@ -36,24 +36,27 @@ public class CommunicationSample {
     public class GetDicItemResultListener implements Callback<SearchDicItemResult> {
         @Override
         public void success(SearchDicItemResult searchDicItemResult, Response response) {
-            Log.d("GetDicItemResult", "onSuccess!!!");
+            Log.d("GetDicItemResult", "onSuccess!");
+            Log.d("TitleList", searchDicItemResult.getTitleList().getDicItemTitle().toString());
+            Log.d("Result", searchDicItemResult.getItemCount());
         }
 
         @Override
         public void failure(RetrofitError error) {
-            Log.d("GetDicItemResult", "onFailure!!!" + error);
+            Log.e("GetDicItemResult", "onFailure! " + error);
         }
     }
 
     public class GetDicItemListener implements Callback<GetDicItemResult> {
         @Override
         public void success(GetDicItemResult GetDicItemResult, Response response) {
-            Log.d("GetDicItem", "onSuccess!!!");
+            Log.d("GetDicItem", "onSuccess!");
+            Log.d("Body", "" + GetDicItemResult.getBody());
         }
 
         @Override
         public void failure(RetrofitError error) {
-            Log.d("GetDicItem", "onFailure!!!" + error);
+            Log.e("GetDicItem", "onFailure! " + error);
         }
     }
 }

@@ -1,16 +1,26 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicItem;
 
+import org.simpleframework.xml.Root;
+import org.simpleframework.xml.Text;
+import org.simpleframework.xml.core.Complete;
+import org.simpleframework.xml.core.Resolve;
+import org.simpleframework.xml.core.Validate;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
+@Root(strict = false)
 public class GetDicItemResult {
 
     private String Xmlns;
     private String ErrorMessage;
+    @Resolve
     private String Head;
+    @Resolve
+    @Validate
     private String Body;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
