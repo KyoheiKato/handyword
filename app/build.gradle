@@ -22,6 +22,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    provided "org.projectlombok:lombok:1.16.0"
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.retrofit:retrofit:1.6.1'
     compile ('com.squareup.retrofit:converter-simplexml:1.5.1') {

@@ -1,6 +1,6 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.pojo.AccessToken;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.AccessToken;
 import retrofit.Callback;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
