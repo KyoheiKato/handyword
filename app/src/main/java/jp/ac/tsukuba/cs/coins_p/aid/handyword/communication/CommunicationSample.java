@@ -14,7 +14,7 @@ public class CommunicationSample {
 
     private static final String API = "https://datamarket.accesscontrol.windows.net/v2";
     private MicrosoftTranslationApi msApi;
-    private SimpleXMLConverter simpleXMLConverter = new SimpleXMLConverter();
+    //private SimpleXMLConverter simpleXMLConverter = new SimpleXMLConverter();
     String GRANT_TYPE = "client_credentials";
     String CLIENT_ID = "handyword";
     String CLIENT_SECRET = "Coins2015uTsukubaKyouheikatoUmezu";
