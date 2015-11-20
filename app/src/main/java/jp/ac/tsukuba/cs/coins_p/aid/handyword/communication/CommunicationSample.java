@@ -11,6 +11,7 @@ import retrofit.converter.SimpleXMLConverter;
 
 public class CommunicationSample {
 
+
     private static final String API = "https://datamarket.accesscontrol.windows.net/v2";
     private MicrosoftTranslationApi msApi;
     private SimpleXMLConverter simpleXMLConverter = new SimpleXMLConverter();
