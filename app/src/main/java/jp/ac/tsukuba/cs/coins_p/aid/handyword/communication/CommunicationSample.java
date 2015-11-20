@@ -2,10 +2,7 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
 
 import android.util.Log;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.RetroFit.dejizoApi;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.getDicItem.GetDicItemResult;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.DicItemTitle;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.jsonschema2pojo.searchDicItem.SearchDicItemResult;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.pojo.AccessToken;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -14,49 +11,35 @@ import retrofit.converter.SimpleXMLConverter;
 
 public class CommunicationSample {
 
-    private static final String API = "http://public.dejizo.jp/NetDicV09.asmx";
-    private dejizoApi dejizoApi;
+    private static final String API = "https://datamarket.accesscontrol.windows.net/v2";
+    private MicrosoftTranslationApi msApi;
     private SimpleXMLConverter simpleXMLConverter = new SimpleXMLConverter();
+    String GRANT_TYPE = "client_credentials";
+    String CLIENT_ID = "handyword";
+    String CLIENT_SECRET = "Coins2015uTsukubaKyouheikatoUmezu";
+    String SCOPE = "http://api.microsofttranslator.com";
 
     public CommunicationSample() {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(API)
-                .setConverter(simpleXMLConverter)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
-        dejizoApi = restAdapter.create(dejizoApi.class);
+        msApi = restAdapter.create(MicrosoftTranslationApi.class);
     }
 
     public void sampleQuery(){
-        dejizoApi.getSearchDicItemResult("EJdict", "dict", "HEADWORD", "STARTWITH", "AND", "XHTML",
-                "20", "0", new GetDicItemResultListener());
-        dejizoApi.getDicItem("EJdict", "011357", "", "XHTML", new GetDicItemListener());
+        msApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET, SCOPE, new AccessTokenListener());
     }
 
-    public class GetDicItemResultListener implements Callback<SearchDicItemResult> {
+    public class AccessTokenListener implements Callback<AccessToken> {
         @Override
-        public void success(SearchDicItemResult searchDicItemResult, Response response) {
-            Log.d("GetDicItemResult", "onSuccess!");
-            Log.d("TitleList", searchDicItemResult.getTitleList().getDicItemTitle().toString());
-            Log.d("Result", searchDicItemResult.getItemCount());
+        public void success(AccessToken AccessToken, Response response) {
+            Log.d("CommunicationSample", "onSuccess!!!" + AccessToken.getAccessToken());
         }
 
         @Override
         public void failure(RetrofitError error) {
-            Log.e("GetDicItemResult", "onFailure! " + error);
-        }
-    }
-
-    public class GetDicItemListener implements Callback<GetDicItemResult> {
-        @Override
-        public void success(GetDicItemResult GetDicItemResult, Response response) {
-            Log.d("GetDicItem", "onSuccess!");
-            Log.d("Body", "" + GetDicItemResult.getBody());
-        }
-
-        @Override
-        public void failure(RetrofitError error) {
-            Log.e("GetDicItem", "onFailure! " + error);
+            Log.e("CommunicationSample", "onFailure! " + error);
         }
     }
 }
