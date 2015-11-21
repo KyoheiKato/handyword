@@ -4,6 +4,7 @@ import android.util.Log;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.AccessTokenResult;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;
+import lombok.Getter;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -14,16 +15,19 @@ public class CommunicationSample {
 
     private static final String ACCESS_TOKEN_API = "https://datamarket.accesscontrol.windows.net/v2";
     private static final String TRANSLATION_API = "http://api.microsofttranslator.com/V2/Http.svc";
+    final String GRANT_TYPE = "client_credentials";
+    final String CLIENT_ID = "handyword";
+    final String CLIENT_SECRET = "Coins2015uTsukubaKyouheikatoUmezu";
+    final String SCOPE = "http://api.microsofttranslator.com";
+
     private AccessTokenApi accessTokenApi;
     private TranslationApi translationApi;
 
+    @Getter
     private String accessToken;
+    @Getter
     private String translatedString;
 
-    String GRANT_TYPE = "client_credentials";
-    String CLIENT_ID = "handyword";
-    String CLIENT_SECRET = "Coins2015uTsukubaKyouheikatoUmezu";
-    String SCOPE = "http://api.microsofttranslator.com";
 
     public CommunicationSample() {
         accessTokenApi = new RestAdapter.Builder()
@@ -61,7 +65,8 @@ public class CommunicationSample {
     public class TranslateListener implements Callback<TranslationResult> {
         @Override
         public void success(TranslationResult translationResult, Response response) {
-            Log.d("TranslateListener", "onSuccess!!!" + translationResult.getTranslatedString());
+            translatedString = translationResult.getTranslatedString();
+            Log.d("TranslateListener", "onSuccess!!!" + translatedString);
         }
 
         @Override
