@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 
-public class AccessToken {
+public class AccessTokenResult {
 
     @Getter @Setter
     @SerializedName("token_type")
