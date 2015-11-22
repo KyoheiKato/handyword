@@ -13,7 +13,7 @@ import android.view.View;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.translation.Translation;
 
 public class MainActivity extends AppCompatActivity {
-
+    Translation translation = new Translation();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +29,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Translation translation = new Translation();
-        Log.d("MainActivity", "success " + translation.translate("筑波大学"));
+        translation.translate("筑波大学", new Translation.TranslationCallback() {
+            @Override
+            public void onTranslated() {
+                Log.d("MainActivity", "success " + translation.getTranslatedString());
+            }
+        });
     }
 
     @Override
