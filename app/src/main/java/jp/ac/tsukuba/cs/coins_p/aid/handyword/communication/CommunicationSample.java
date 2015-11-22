@@ -2,6 +2,7 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
 
 import android.util.Log;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.CustomXMLConverter;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.AccessTokenResult;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;
 import lombok.Getter;
@@ -9,7 +10,6 @@ import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import retrofit.converter.SimpleXMLConverter;
 
 public class CommunicationSample {
 
@@ -19,6 +19,8 @@ public class CommunicationSample {
     final String CLIENT_ID = "handyword";
     final String CLIENT_SECRET = "Coins2015uTsukubaKyouheikatoUmezu";
     final String SCOPE = "http://api.microsofttranslator.com";
+    final String JAPANESE = "ja";
+    final String ENGLISH = "en";
 
     private AccessTokenApi accessTokenApi;
     private TranslationApi translationApi;
@@ -37,7 +39,7 @@ public class CommunicationSample {
                 .create(AccessTokenApi.class);
         translationApi = new RestAdapter.Builder()
                 .setEndpoint(TRANSLATION_API)
-                .setConverter(new SimpleXMLConverter())
+                .setConverter(new CustomXMLConverter())
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build()
                 .create(TranslationApi.class);
@@ -51,14 +53,14 @@ public class CommunicationSample {
         @Override
         public void success(AccessTokenResult accessTokenResult, Response response) {
             accessToken = accessTokenResult.getAccessToken();
-            Log.d("GetAccessTokenListener", "onSuccess!!!" + accessToken);
-            translationApi.translate("Bearer " + accessToken, "こんにちは", "ja", "en",
-                    "text/plain", "general", new TranslateListener());
+            Log.d("GetAccessTokenListener", "onSuccess! " + accessToken);
+            translationApi.translate("Bearer " + accessToken, "こんにちは", JAPANESE,
+                    ENGLISH, "text/plain", "general", new TranslateListener());
         }
 
         @Override
         public void failure(RetrofitError error) {
-            Log.e("GetAccessTokenListener", "onFailure! " + error);
+            Log.e("GetAccessTokenListener", "onFailure!", error);
         }
     }
 
@@ -66,12 +68,12 @@ public class CommunicationSample {
         @Override
         public void success(TranslationResult translationResult, Response response) {
             translatedString = translationResult.getTranslatedString();
-            Log.d("TranslateListener", "onSuccess!!!" + translatedString);
+            Log.d("TranslateListener", "onSuccess! " + translatedString);
         }
 
         @Override
         public void failure(RetrofitError error) {
-            Log.e("TranslateListener", "onFailure! " + error);
+            Log.e("TranslateListener", "onFailure!", error);
         }
     }
 }
