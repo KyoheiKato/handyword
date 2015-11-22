@@ -11,7 +11,7 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class CommunicationSample {
+public class Translation {
 
     private static final String ACCESS_TOKEN_API = "https://datamarket.accesscontrol.windows.net/v2";
     private static final String TRANSLATION_API = "http://api.microsofttranslator.com/V2/Http.svc";
@@ -27,11 +27,11 @@ public class CommunicationSample {
 
     @Getter
     private String accessToken;
-    @Getter
+
     private String translatedString;
 
 
-    public CommunicationSample() {
+    public Translation() {
         accessTokenApi = new RestAdapter.Builder()
                 .setEndpoint(ACCESS_TOKEN_API)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -45,17 +45,30 @@ public class CommunicationSample {
                 .create(TranslationApi.class);
     }
 
-    public void sampleQuery(){
-        accessTokenApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET, SCOPE, new GetAccessTokenListener());
+    public String translate(final String string){
+        translatedString = null;
+        accessTokenApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET, SCOPE, new GetAccessTokenListener(){
+            @Override
+            public void success(AccessTokenResult accessTokenResult, Response response) {
+                accessToken = accessTokenResult.getAccessToken();
+                Log.d("GetAccessTokenListener", "onSuccess! " + accessToken);
+                translationApi.translate("Bearer " + accessToken, string, JAPANESE,
+                        ENGLISH, "text/plain", "general", new TranslateListener(){
+                            @Override
+                            public void success(TranslationResult translationResult, Response response) {
+                                translatedString = translationResult.getTranslatedString();
+                                Log.d("TranslateListener", "onSuccess!" + translatedString);
+                            }
+                        });
+            }
+        });
+        return translatedString;
     }
 
     public class GetAccessTokenListener implements Callback<AccessTokenResult> {
         @Override
         public void success(AccessTokenResult accessTokenResult, Response response) {
-            accessToken = accessTokenResult.getAccessToken();
-            Log.d("GetAccessTokenListener", "onSuccess! " + accessToken);
-            translationApi.translate("Bearer " + accessToken, "こんにちは", JAPANESE,
-                    ENGLISH, "text/plain", "general", new TranslateListener());
+            Log.d("GetAccessTokenListener", "onSuccess!");
         }
 
         @Override
@@ -68,7 +81,7 @@ public class CommunicationSample {
         @Override
         public void success(TranslationResult translationResult, Response response) {
             translatedString = translationResult.getTranslatedString();
-            Log.d("TranslateListener", "onSuccess! " + translatedString);
+            Log.d("TranslateListener", "onSuccess!");
         }
 
         @Override

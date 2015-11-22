@@ -5,11 +5,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.CommunicationSample;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.Translation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        CommunicationSample communicationSample = new CommunicationSample();
-        communicationSample.sampleQuery();
+        Translation translation = new Translation();
+        Log.d("MainActivity", "success" + translation.translate("筑波大学"));
     }
 
     @Override
