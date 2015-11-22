@@ -11,4 +11,9 @@ public interface TranslationApi {
                    @Query("from") String from, @Query("to") String to,
                    @Query("contentType") String contentType, @Query("category") String category,
                    Callback<TranslationResult> cb);
+
+    @GET("/Translate")
+    TranslationResult translate(@Query("appId") String appId, @Query("text") String text,
+                   @Query("from") String from, @Query("to") String to,
+                   @Query("contentType") String contentType, @Query("category") String category);
 }

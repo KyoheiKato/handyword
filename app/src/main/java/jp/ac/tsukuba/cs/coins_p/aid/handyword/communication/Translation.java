@@ -2,16 +2,17 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
 
 import android.util.Log;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.MainActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.AccessTokenResult;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;
-import lombok.Getter;
+import lombok.Setter;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class Translation {
+public class Translation extends Thread{
 
     private static final String ACCESS_TOKEN_API = "https://datamarket.accesscontrol.windows.net/v2";
     private static final String TRANSLATION_API = "http://api.microsofttranslator.com/V2/Http.svc";
@@ -25,13 +26,13 @@ public class Translation {
     private AccessTokenApi accessTokenApi;
     private TranslationApi translationApi;
 
-    @Getter
-    private String accessToken;
+    private MainActivity mainActivity;
 
-    private String translatedString;
+    @Setter
+    private String stringToTranslate;
 
-
-    public Translation() {
+    public Translation(MainActivity activity) {
+        mainActivity = activity;
         accessTokenApi = new RestAdapter.Builder()
                 .setEndpoint(ACCESS_TOKEN_API)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -45,23 +46,18 @@ public class Translation {
                 .create(TranslationApi.class);
     }
 
+    public void run(){
+        mainActivity.setSampleString(translate(stringToTranslate));
+    }
+
     public String translate(final String string){
-        translatedString = null;
-        accessTokenApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET, SCOPE, new GetAccessTokenListener(){
-            @Override
-            public void success(AccessTokenResult accessTokenResult, Response response) {
-                accessToken = accessTokenResult.getAccessToken();
-                Log.d("GetAccessTokenListener", "onSuccess! " + accessToken);
-                translationApi.translate("Bearer " + accessToken, string, JAPANESE,
-                        ENGLISH, "text/plain", "general", new TranslateListener(){
-                            @Override
-                            public void success(TranslationResult translationResult, Response response) {
-                                translatedString = translationResult.getTranslatedString();
-                                Log.d("TranslateListener", "onSuccess!" + translatedString);
-                            }
-                        });
-            }
-        });
+        String accessToken;
+        accessToken = accessTokenApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET,
+                SCOPE).getAccessToken();
+        String translatedString;
+        translatedString = translationApi.translate("Bearer " + accessToken, string,
+                JAPANESE, ENGLISH, "text/plain", "general").getTranslatedString();
+        Log.d("Translation", "" + translatedString);
         return translatedString;
     }
 
@@ -80,7 +76,6 @@ public class Translation {
     public class TranslateListener implements Callback<TranslationResult> {
         @Override
         public void success(TranslationResult translationResult, Response response) {
-            translatedString = translationResult.getTranslatedString();
             Log.d("TranslateListener", "onSuccess!");
         }
 
