@@ -11,14 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.Translation;
-import lombok.Getter;
-import lombok.Setter;
 
 public class MainActivity extends AppCompatActivity {
-    @Getter @Setter
-    String sampleString;
-
-    Translation translation = new Translation(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +29,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        translation.setStringToTranslate("筑波大学");
-        translation.start();
-        try {
-            translation.join();
-        } catch (InterruptedException e) {}
-        Log.d("MainActivity", "success " + getSampleString());
+        Translation translation = new Translation();
+        Log.d("MainActivity", "success " + translation.translate("筑波大学"));
     }
 
     @Override
