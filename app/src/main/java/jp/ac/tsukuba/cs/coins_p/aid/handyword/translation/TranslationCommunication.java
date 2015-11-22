@@ -1,7 +1,9 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
 import android.util.Log;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.AccessTokenApi;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.TranslationApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.AccessTokenResult;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;

@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
 import lombok.Getter;
 import lombok.Setter;

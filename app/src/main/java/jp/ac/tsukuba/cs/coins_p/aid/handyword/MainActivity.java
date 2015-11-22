@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.Translation;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.translation.Translation;
 
 public class MainActivity extends AppCompatActivity {
 
