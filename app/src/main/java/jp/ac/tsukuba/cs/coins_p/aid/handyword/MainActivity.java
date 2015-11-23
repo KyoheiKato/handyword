@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         translation.translate("筑波大学", new Translation.TranslationCallback() {
             @Override
             public void onTranslationSuccess() {
@@ -39,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.SampleText);
                 textView.setText(translatedString);
             }
+
             @Override
-            public void onTranslationFailure(RetrofitError error){
+            public void onTranslationFailure(RetrofitError error) {
                 Log.e("Translation", "TranslateListener onFailure!", error);
             }
         });

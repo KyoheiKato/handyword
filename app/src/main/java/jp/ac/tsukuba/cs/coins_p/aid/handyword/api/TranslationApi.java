@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.communication;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.api;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;
 import retrofit.Callback;
