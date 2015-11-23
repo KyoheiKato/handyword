@@ -1,7 +1,5 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
-import android.util.Log;
-
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.AccessTokenApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.communication.TranslationApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
@@ -16,7 +14,8 @@ import retrofit.client.Response;
 
 public class Translation {
     public interface TranslationCallback {
-        void onTranslated();
+        void onTranslationSuccess();
+        void onTranslationFailure(RetrofitError error);
     }
 
     private static final String ACCESS_TOKEN_API = "https://datamarket.accesscontrol.windows.net/v2";
@@ -55,18 +54,16 @@ public class Translation {
                 .create(TranslationApi.class);
     }
 
-    public String translate(final String string, TranslationCallback translationCallback){
+    public void translate(final String string, TranslationCallback translationCallback){
         this.translationCallback = translationCallback;
         stringToTranslate = string;
         accessTokenApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET, SCOPE,
                 new GetAccessTokenListener());
-        return translatedString;
     }
 
     public class GetAccessTokenListener implements Callback<AccessTokenResult> {
         @Override
         public void success(AccessTokenResult accessTokenResult, Response response) {
-            Log.d("GetAccessTokenListener", "onSuccess!");
             accessToken = accessTokenResult.getAccessToken();
             translationApi.translate("Bearer " + accessToken, stringToTranslate, JAPANESE, ENGLISH,
                     "text/plain", "general", new TranslateListener());
@@ -74,21 +71,20 @@ public class Translation {
 
         @Override
         public void failure(RetrofitError error) {
-            Log.e("GetAccessTokenListener", "onFailure!", error);
+            translationCallback.onTranslationFailure(error);
         }
     }
 
     public class TranslateListener implements Callback<TranslationResult> {
         @Override
         public void success(TranslationResult translationResult, Response response) {
-            Log.d("TranslateListener", "onSuccess!");
             translatedString = translationResult.getTranslatedString();
-            translationCallback.onTranslated();
+            translationCallback.onTranslationSuccess();
         }
 
         @Override
         public void failure(RetrofitError error) {
-            Log.e("TranslateListener", "onFailure!", error);
+            translationCallback.onTranslationFailure(error);
         }
     }
 }

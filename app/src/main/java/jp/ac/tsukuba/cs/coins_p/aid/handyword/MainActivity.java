@@ -9,8 +9,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.translation.Translation;
+import retrofit.RetrofitError;
 
 public class MainActivity extends AppCompatActivity {
     Translation translation = new Translation();
@@ -31,8 +33,15 @@ public class MainActivity extends AppCompatActivity {
         });
         translation.translate("筑波大学", new Translation.TranslationCallback() {
             @Override
-            public void onTranslated() {
-                Log.d("MainActivity", "success " + translation.getTranslatedString());
+            public void onTranslationSuccess() {
+                String translatedString = translation.getTranslatedString();
+                Log.d("MainActivity", "success " + translatedString);
+                TextView textView = (TextView) findViewById(R.id.SampleText);
+                textView.setText(translatedString);
+            }
+            @Override
+            public void onTranslationFailure(RetrofitError error){
+                Log.e("Translation", "TranslateListener onFailure!", error);
             }
         });
     }
