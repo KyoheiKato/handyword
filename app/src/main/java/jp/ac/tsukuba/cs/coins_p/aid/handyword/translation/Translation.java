@@ -14,7 +14,7 @@ import retrofit.client.Response;
 
 public class Translation {
     public interface TranslationCallback {
-        void onTranslationSuccess();
+        void onTranslationSuccess(String translatedString);
         void onTranslationFailure(RetrofitError error);
     }
 
@@ -27,16 +27,16 @@ public class Translation {
     final String JAPANESE = "ja";
     final String ENGLISH = "en";
 
+    private String translationFrom = JAPANESE;
+    private String translationTo = ENGLISH;
+
     private AccessTokenApi accessTokenApi;
     private TranslationApi translationApi;
 
-    private Translation translation;
     TranslationCallback translationCallback;
 
     @Setter
     private String accessToken;
-    @Setter @Getter
-    private String translatedString;
     @Setter
     private String stringToTranslate;
 
@@ -54,9 +54,12 @@ public class Translation {
                 .create(TranslationApi.class);
     }
 
-    public void translate(final String string, TranslationCallback translationCallback){
+    public void translate(final String stringToTranslate, String translationFrom,
+                          String translationTo, TranslationCallback translationCallback){
         this.translationCallback = translationCallback;
-        stringToTranslate = string;
+        this.stringToTranslate = stringToTranslate;
+        this.translationFrom = translationFrom;
+        this.translationTo = translationTo;
         accessTokenApi.getAccessToken(GRANT_TYPE, CLIENT_ID, CLIENT_SECRET, SCOPE,
                 new GetAccessTokenListener());
     }
@@ -65,8 +68,8 @@ public class Translation {
         @Override
         public void success(AccessTokenResult accessTokenResult, Response response) {
             accessToken = accessTokenResult.getAccessToken();
-            translationApi.translate("Bearer " + accessToken, stringToTranslate, JAPANESE, ENGLISH,
-                    "text/plain", "general", new TranslateListener());
+            translationApi.translate("Bearer " + accessToken, stringToTranslate, translationFrom,
+                    translationTo, "text/plain", "general", new TranslateListener());
         }
 
         @Override
@@ -78,8 +81,7 @@ public class Translation {
     public class TranslateListener implements Callback<TranslationResult> {
         @Override
         public void success(TranslationResult translationResult, Response response) {
-            translatedString = translationResult.getTranslatedString();
-            translationCallback.onTranslationSuccess();
+            translationCallback.onTranslationSuccess(translationResult.getTranslatedString());
         }
 
         @Override

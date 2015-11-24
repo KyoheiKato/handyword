@@ -32,18 +32,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        translation.translate("筑波大学", new Translation.TranslationCallback() {
+        translation.translate("筑波大学", "ja", "en", new Translation.TranslationCallback() {
             @Override
-            public void onTranslationSuccess() {
-                String translatedString = translation.getTranslatedString();
-                Log.d("MainActivity", "success " + translatedString);
+            public void onTranslationSuccess(String translatedString) {
+                Log.d("MainActivity", "onTranslationSuccess " + translatedString);
                 TextView textView = (TextView) findViewById(R.id.SampleText);
                 textView.setText(translatedString);
             }
 
             @Override
             public void onTranslationFailure(RetrofitError error) {
-                Log.e("Translation", "TranslateListener onFailure!", error);
+                Log.e("MainActivity", "onTranslationFailure!", error);
             }
         });
     }
