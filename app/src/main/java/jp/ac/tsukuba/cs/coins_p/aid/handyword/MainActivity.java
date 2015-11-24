@@ -44,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
             public void onTranslationFailure(RetrofitError error) {
                 Log.e("MainActivity", "onTranslationFailure!", error);
             }
+
+            @Override
+            public void onAccessTokenGetFailure(RetrofitError error) {
+                Log.e("MainActivity", "onAccessTokenGetFailure!", error);
+            }
         });
     }
 
