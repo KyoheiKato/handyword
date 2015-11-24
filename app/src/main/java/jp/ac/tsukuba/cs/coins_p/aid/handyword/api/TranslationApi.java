@@ -6,6 +6,7 @@ import retrofit.http.GET;
 import retrofit.http.Query;
 
 public interface TranslationApi {
+
     @GET("/Translate")
     void translate(@Query("appId") String appId, @Query("text") String text,
                    @Query("from") String from, @Query("to") String to,

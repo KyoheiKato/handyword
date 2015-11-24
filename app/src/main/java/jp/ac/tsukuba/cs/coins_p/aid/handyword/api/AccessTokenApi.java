@@ -6,14 +6,7 @@ import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.POST;
 public interface AccessTokenApi {
-    /**
-     * アノテーションでGET/POST/PUT/DELETEを指定。
-     * カッコ内はリクエストのホスト部以降を指定。
-     *
-     * 戻り型をvoidとすることで勝手に別スレッドで通信処理を行ってくれる。
-     *
-     * コールバックにPOJOのオブジェクトを指定するとPOJO変換してくれる。
-     */
+
     @FormUrlEncoded
     @POST("/OAuth2-13")
     void getAccessToken(@Field("grant_type") String grantType, @Field("client_id") String clientId,
