@@ -29,7 +29,7 @@ public class ConversionUtils {
 
     }
 
-    private String addRootTag(String string) {
+    public String addRootTag(String string) {
         String rootAddedString;
         rootAddedString = "<root>\n" + string + "\n</root>";
         return rootAddedString;

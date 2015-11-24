@@ -30,7 +30,8 @@ public class CustomXMLConverter implements Converter {
         this.serializer = serializer;
     }
 
-    @Override public Object fromBody(TypedInput body, Type type) throws ConversionException {
+    @Override
+    public Object fromBody(TypedInput body, Type type) throws ConversionException {
         try {
             InputStream inputStream = conversionUtils.getRootAddedXML(body.in());
             return serializer.read((Class<?>) type, inputStream);
@@ -39,7 +40,8 @@ public class CustomXMLConverter implements Converter {
         }
     }
 
-    @Override public TypedOutput toBody(Object source) {
+    @Override
+    public TypedOutput toBody(Object source) {
         OutputStreamWriter osw = null;
         try {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
