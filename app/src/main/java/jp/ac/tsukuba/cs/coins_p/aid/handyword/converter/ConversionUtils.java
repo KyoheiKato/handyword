@@ -9,11 +9,11 @@ import java.io.UnsupportedEncodingException;
 
 public class ConversionUtils {
 
-    public InputStream getRootAddedXML(InputStream inputStream){
+    public InputStream getRootAddedXML(InputStream inputStream) {
         return getInputStreamFromString(addRootTag(getStringFromInputStream(inputStream)));
     }
 
-    public String getStringFromInputStream(InputStream inputStream){
+    public String getStringFromInputStream(InputStream inputStream) {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
 
         StringBuilder sb = new StringBuilder();
@@ -23,24 +23,24 @@ public class ConversionUtils {
                 sb.append(line);
             }
             return sb.toString();
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new AssertionError(e);
         }
 
     }
 
-    private String addRootTag(String string){
+    private String addRootTag(String string) {
         String rootAddedString;
         rootAddedString = "<root>\n" + string + "\n</root>";
         return rootAddedString;
     }
 
-    public InputStream getInputStreamFromString(String string){
+    public InputStream getInputStreamFromString(String string) {
         InputStream inputStream;
-        try{
+        try {
             inputStream = new ByteArrayInputStream(string.getBytes("utf-8"));
             return inputStream;
-        } catch (UnsupportedEncodingException e){
+        } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }
     }

@@ -9,7 +9,7 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class Translation{
+public class Translation {
     public interface TranslationCallback {
         void onTranslationSuccess(String translatedString);
         void onTranslationFailure(RetrofitError error);
@@ -32,7 +32,7 @@ public class Translation{
     }
 
     public void translate(final String string, final String from, final String to,
-                          final TranslationCallback cb){
+                          final TranslationCallback cb) {
         translationCallback = cb;
         AccessToken accessToken = new AccessToken();
         accessToken.getAccessToken(new AccessToken.AccessTokenCallback() {
