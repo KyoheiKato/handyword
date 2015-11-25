@@ -3,6 +3,7 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model;
 import android.content.Context;
 
 import java.util.Date;
+import java.util.List;
 
 import io.realm.Realm;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
@@ -37,6 +38,10 @@ public class WordCardModel {
         wordCard.setUpdatedAt(new Date());
         realmInstance.copyToRealmOrUpdate(wordCard);
         realmInstance.commitTransaction();
+    }
+
+    public List<WordCard> findAll() {
+        return realmInstance.where(WordCard.class).findAll();
     }
 
     private int getNextPrimaryKey() {
