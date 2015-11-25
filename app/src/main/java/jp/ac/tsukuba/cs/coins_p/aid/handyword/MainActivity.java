@@ -5,17 +5,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint.Translation;
-import retrofit.RetrofitError;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint.TranslationEndpoint;
 
 public class MainActivity extends AppCompatActivity {
-    Translation translation = new Translation();
+    TranslationEndpoint translationEndpoint = new TranslationEndpoint();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,25 +26,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-            }
-        });
-
-        translation.translate("筑波大学", "ja", "en", new Translation.TranslationCallback() {
-            @Override
-            public void onTranslationSuccess(String translatedString) {
-                Log.d("MainActivity", "onTranslationSuccess " + translatedString);
-                TextView textView = (TextView) findViewById(R.id.SampleText);
-                textView.setText(translatedString);
-            }
-
-            @Override
-            public void onTranslationFailure(RetrofitError error) {
-                Log.e("MainActivity", "onTranslationFailure!", error);
-            }
-
-            @Override
-            public void onAccessTokenGetFailure(RetrofitError error) {
-                Log.e("MainActivity", "onAccessTokenGetFailure!", error);
             }
         });
     }
