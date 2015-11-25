@@ -26,8 +26,8 @@
             android:label="@string/title_activity_top_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".topMenuActivity.Main2Activity"
-            android:label="@string/title_activity_main2"
+            android:name=".QuizActivity"
+            android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

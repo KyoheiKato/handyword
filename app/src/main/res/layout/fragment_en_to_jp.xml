@@ -17,7 +17,7 @@
             android:background="#CCFFCC">
             <TextView
                 android:padding="5sp"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="苦手な単語"/>
@@ -30,7 +30,7 @@
             android:background="#99CCFF">
             <TextView
                 android:padding="5sp"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="最近追加した単語"/>
@@ -43,7 +43,7 @@
             android:background="#CCFF99">
             <TextView
                 android:padding="5sp"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="すべての単語"/>
