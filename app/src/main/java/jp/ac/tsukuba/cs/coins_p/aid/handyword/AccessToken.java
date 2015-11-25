@@ -1,6 +1,5 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessTokenResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -16,7 +15,7 @@ public class AccessToken {
         void getAccessToken(@Field("grant_type") String grantType, @Field("client_id") String clientId,
                             @Field("client_secret") String clientSecret,
                             @Field("scope") String scope,
-                            Callback<AccessTokenResult> cb);
+                            Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessToken> cb);
     }
 
     public interface AccessTokenCallback {
@@ -45,10 +44,10 @@ public class AccessToken {
                 SCOPE, new GetAccessTokenListener());
     }
 
-    public class GetAccessTokenListener implements Callback<AccessTokenResult> {
+    public class GetAccessTokenListener implements Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessToken> {
         @Override
-        public void success(AccessTokenResult accessTokenResult, Response response) {
-            accessTokenCallback.onGetAccessTokenSuccess(accessTokenResult.getAccessToken());
+        public void success(jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessToken accessToken, Response response) {
+            accessTokenCallback.onGetAccessTokenSuccess(accessToken.getAccessToken());
         }
 
         @Override

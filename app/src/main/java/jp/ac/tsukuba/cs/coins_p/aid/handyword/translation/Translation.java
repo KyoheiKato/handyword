@@ -2,7 +2,7 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.AccessToken;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.TranslationResult;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.TranslationEntity;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -17,7 +17,7 @@ public class Translation {
     void translate(@Query("appId") String appId, @Query("text") String text,
                    @Query("from") String from, @Query("to") String to,
                    @Query("contentType") String contentType, @Query("category") String category,
-                   Callback<TranslationResult> cb);
+                   Callback<TranslationEntity> cb);
     }
 
     public interface TranslationCallback {
@@ -59,10 +59,10 @@ public class Translation {
         });
     }
 
-    public class TranslateListener implements Callback<TranslationResult> {
+    public class TranslateListener implements Callback<TranslationEntity> {
         @Override
-        public void success(TranslationResult translationResult, Response response) {
-            translationCallback.onTranslationSuccess(translationResult.getTranslatedString());
+        public void success(TranslationEntity translationEntity, Response response) {
+            translationCallback.onTranslationSuccess(translationEntity.getTranslatedString());
         }
 
         @Override

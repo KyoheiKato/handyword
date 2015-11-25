@@ -4,11 +4,10 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 import lombok.Getter;
-import lombok.Setter;
 
+@Getter
 @Root(name = "root")
-public class TranslationResult {
-    @Getter @Setter
+public class TranslationEntity {
     @Element(name = "string")
     private String translatedString;
 }
