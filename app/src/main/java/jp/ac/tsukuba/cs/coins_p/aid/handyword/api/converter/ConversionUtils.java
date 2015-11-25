@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.converter;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.api.converter;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

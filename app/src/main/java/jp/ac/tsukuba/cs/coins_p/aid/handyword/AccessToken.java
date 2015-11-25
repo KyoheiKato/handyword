@@ -15,7 +15,7 @@ public class AccessToken {
         void getAccessToken(@Field("grant_type") String grantType, @Field("client_id") String clientId,
                             @Field("client_secret") String clientSecret,
                             @Field("scope") String scope,
-                            Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessToken> cb);
+                            Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.AccessToken> cb);
     }
 
     public interface AccessTokenCallback {
@@ -44,9 +44,9 @@ public class AccessToken {
                 SCOPE, new GetAccessTokenListener());
     }
 
-    public class GetAccessTokenListener implements Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessToken> {
+    public class GetAccessTokenListener implements Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.AccessToken> {
         @Override
-        public void success(jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessToken accessToken, Response response) {
+        public void success(jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.AccessToken accessToken, Response response) {
             accessTokenCallback.onGetAccessTokenSuccess(accessToken.getAccessToken());
         }
 

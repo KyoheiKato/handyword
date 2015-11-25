@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;

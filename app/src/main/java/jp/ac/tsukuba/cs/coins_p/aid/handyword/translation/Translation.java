@@ -1,8 +1,8 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.AccessToken;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.TranslationEntity;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.converter.CustomXMLConverter;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.TranslationEntity;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
