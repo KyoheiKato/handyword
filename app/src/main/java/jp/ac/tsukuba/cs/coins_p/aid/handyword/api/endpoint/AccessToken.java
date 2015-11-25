@@ -5,19 +5,7 @@ import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import retrofit.http.Field;
-import retrofit.http.FormUrlEncoded;
-import retrofit.http.POST;
 public class AccessToken {
-
-    public interface AccessTokenApi {
-        @FormUrlEncoded
-        @POST("/OAuth2-13")
-        void getAccessToken(@Field("grant_type") String grantType, @Field("client_id") String clientId,
-                            @Field("client_secret") String clientSecret,
-                            @Field("scope") String scope,
-                            Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.AccessToken> cb);
-    }
 
     public interface AccessTokenCallback {
         void onGetAccessTokenSuccess(String translatedString);
