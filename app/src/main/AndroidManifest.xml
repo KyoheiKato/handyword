@@ -24,6 +24,10 @@
         <activity
             android:name=".topMenuActivity.TopMenuActivity"
             android:label="@string/title_activity_top_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".topMenuActivity.Main2Activity"
+            android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
