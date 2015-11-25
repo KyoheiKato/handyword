@@ -2,7 +2,7 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.AccessToken;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.TranslationResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;

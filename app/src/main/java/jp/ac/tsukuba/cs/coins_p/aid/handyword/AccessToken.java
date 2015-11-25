@@ -1,6 +1,6 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.AccessTokenResult;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema.AccessTokenResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;

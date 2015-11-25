@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.dataschema;
 
 import com.google.gson.annotations.SerializedName;
 
