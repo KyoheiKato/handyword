@@ -2,9 +2,11 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema;
 
 import com.google.gson.annotations.SerializedName;
 
-import lombok.Getter;
+import java.util.Date;
 
-@Getter
+import lombok.Data;
+
+@Data
 public class AccessToken {
     @SerializedName("token_type")
     private String tokenType;
@@ -13,4 +15,5 @@ public class AccessToken {
     @SerializedName("expires_in")
     private int expiresIn;
     private String scope;
+    private Date effectiveTime;
 }
