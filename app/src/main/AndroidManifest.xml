@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.TopMenuActivity"
+            android:name=".topMenuActivity.TopMenuActivity"
             android:label="@string/title_activity_top_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

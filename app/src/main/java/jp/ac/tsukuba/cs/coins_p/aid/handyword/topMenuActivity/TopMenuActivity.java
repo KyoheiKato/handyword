@@ -1,4 +1,4 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.Activities;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.topMenuActivity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
