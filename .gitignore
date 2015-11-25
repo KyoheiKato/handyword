@@ -12,6 +12,8 @@ build/
 .idea/scopes/
 .idea/inspectionProfiles/
 
+api.properties
+
 .DS_Store
 /captures
 

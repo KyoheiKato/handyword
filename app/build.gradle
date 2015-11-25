@@ -12,8 +12,16 @@ android {
         versionName "1.0"
         multiDexEnabled true
     }
+
+
     buildTypes {
+        debug{
+            buildConfigField "String", "CLIENT_SECRET", "\"${project.property("clientSecret")}\""
+            buildConfigField "String", "CLIENT_ID", "\"${project.property("clientId")}\""
+        }
         release {
+            buildConfigField "String", "CLIENT_SECRET", "\"${project.property("clientSecret")}\""
+            buildConfigField "String", "CLIENT_ID", "\"${project.property("clientId")}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -34,7 +42,7 @@ dependencies {
         exclude group: 'stax', module: 'stax-api'
         exclude group: 'xpp3', module: 'xpp3'
     }
-    compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
     compile 'org.glassfish:javax.annotation:10.0-b28'
 }

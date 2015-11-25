@@ -1,15 +1,25 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.AccessToken;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.TranslationApi;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.converter.CustomXMLConverter;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.pojo.TranslationResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import retrofit.http.GET;
+import retrofit.http.Query;
 
 public class Translation {
+
+    public interface TranslationApi {
+    @GET("/Translate")
+    void translate(@Query("appId") String appId, @Query("text") String text,
+                   @Query("from") String from, @Query("to") String to,
+                   @Query("contentType") String contentType, @Query("category") String category,
+                   Callback<TranslationResult> cb);
+    }
+
     public interface TranslationCallback {
         void onTranslationSuccess(String translatedString);
         void onTranslationFailure(RetrofitError error);
