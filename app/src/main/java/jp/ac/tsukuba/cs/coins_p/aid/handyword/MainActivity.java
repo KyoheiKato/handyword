@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.translation.Translation;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint.Translation;
 import retrofit.RetrofitError;
 
 public class MainActivity extends AppCompatActivity {

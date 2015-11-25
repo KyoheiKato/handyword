@@ -1,5 +1,6 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.BuildConfig;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;

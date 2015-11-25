@@ -7,7 +7,7 @@ import lombok.Getter;
 
 @Getter
 @Root(name = "root")
-public class TranslationEntity {
+public class Translation {
     @Element(name = "string")
     private String translatedString;
 }

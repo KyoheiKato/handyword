@@ -1,8 +1,6 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.translation;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.AccessToken;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.converter.CustomXMLConverter;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.TranslationEntity;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -17,7 +15,7 @@ public class Translation {
     void translate(@Query("appId") String appId, @Query("text") String text,
                    @Query("from") String from, @Query("to") String to,
                    @Query("contentType") String contentType, @Query("category") String category,
-                   Callback<TranslationEntity> cb);
+                   Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.Translation> cb);
     }
 
     public interface TranslationCallback {
@@ -59,10 +57,10 @@ public class Translation {
         });
     }
 
-    public class TranslateListener implements Callback<TranslationEntity> {
+    public class TranslateListener implements Callback<jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.Translation> {
         @Override
-        public void success(TranslationEntity translationEntity, Response response) {
-            translationCallback.onTranslationSuccess(translationEntity.getTranslatedString());
+        public void success(jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.Translation translation, Response response) {
+            translationCallback.onTranslationSuccess(translation.getTranslatedString());
         }
 
         @Override
