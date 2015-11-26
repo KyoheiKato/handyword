@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">handyword</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_word_cards">WordCardsActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_edit">EditActivity</string>
 </resources>
