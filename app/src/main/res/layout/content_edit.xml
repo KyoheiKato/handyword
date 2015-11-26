@@ -29,16 +29,16 @@
         android:layout_height="wrap_content">
         <Button
             android:layout_width="0dp"
-            app:layout_widthPercent="20%"
+            app:layout_widthPercent="25%"
             android:layout_height="wrap_content"
             android:text="↓翻訳"
             app:layout_marginLeftPercent="10%"/>
         <Button
             android:layout_width="0dp"
-            app:layout_widthPercent="20%"
+            app:layout_widthPercent="25%"
             android:layout_height="wrap_content"
             android:text="↑翻訳"
-            app:layout_marginLeftPercent="70%"/>
+            app:layout_marginLeftPercent="65%"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
         android:id="@+id/label_english"
