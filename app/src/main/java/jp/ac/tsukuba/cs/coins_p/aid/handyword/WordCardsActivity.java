@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class WordCardsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,14 +42,14 @@ public class WordCardsActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        findViewById(R.id.nav_header_word_cards).findViewById(R.id.button_add)
-//                .setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(WordCardsActivity.this, EditActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        Button button = (Button)findViewById(R.id.button_add);
+//        button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                    public void onClick(View v) {
+//                        Intent intent = new Intent(WordCardsActivity.this, EditActivity.class);
+//                        startActivity(intent);
+//                    }
+//                });
     }
 
     @Override
