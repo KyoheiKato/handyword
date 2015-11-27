@@ -1,17 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.EditActivity"
-    tools:showIn="@layout/activity_edit"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.EditFragment">
 
     <TextView
         android:id="@+id/label_japanese"
@@ -52,11 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/register"
+        android:id="@+id/button_register"
         android:text="登録"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"/>
-
-
 </LinearLayout>

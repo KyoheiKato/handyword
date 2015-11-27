@@ -12,7 +12,7 @@
                 android:icon="@android:drawable/ic_input_get"
                 android:title="最近覚えた単語" />
             <item
-                android:id="@+id/nav_recent"
+                android:id="@+id/nav_not_learned"
                 android:icon="@android:drawable/ic_dialog_dialer"
                 android:title="まだ覚えていない単語" />
             <item

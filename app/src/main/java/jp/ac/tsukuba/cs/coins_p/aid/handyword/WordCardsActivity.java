@@ -1,9 +1,11 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,8 +16,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy.DummyContent;
+
 public class WordCardsActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        ItemFragment.OnListFragmentInteractionListener,
+        EditFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +34,10 @@ public class WordCardsActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WordCardsActivity.this, EditActivity.class);
-                startActivity(intent);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, EditFragment.newInstance())
+                        .commit();
             }
         });
 
@@ -43,13 +51,6 @@ public class WordCardsActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Button button = (Button)findViewById(R.id.button_add);
-//        button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                    public void onClick(View v) {
-//                        Intent intent = new Intent(WordCardsActivity.this, EditActivity.class);
-//                        startActivity(intent);
-//                    }
-//                });
     }
 
     @Override
@@ -64,19 +65,14 @@ public class WordCardsActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.word_cards, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -87,19 +83,35 @@ public class WordCardsActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        FragmentManager fragmentManager = getSupportFragmentManager();
         int id = item.getItemId();
 
         if (id == R.id.nav_weak) {
-
-        } else if (id == R.id.nav_recent) {
-
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, QuizFragment.newInstance())
+                    .commit();
+        } else if (id == R.id.nav_not_learned) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, ItemFragment.newInstance(10))
+                    .commit();
         } else if (id == R.id.nav_all) {
-
+        } else if (id == R.id.button_add){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, EditFragment.newInstance())
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item){
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri){
+
     }
 }

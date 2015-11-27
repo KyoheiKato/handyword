@@ -25,10 +25,6 @@
             android:name=".WordCardsActivity"
             android:label="@string/title_activity_word_cards"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".EditActivity"
-            android:label="@string/title_activity_edit"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
