@@ -91,7 +91,7 @@ public class WordCardsActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_weak) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_recent) {
 
         } else if (id == R.id.nav_all) {
