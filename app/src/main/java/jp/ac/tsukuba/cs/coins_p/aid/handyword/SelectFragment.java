@@ -6,16 +6,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
-public class EditFragment extends Fragment {
+public class SelectFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
-    public EditFragment() {}
+    public SelectFragment() {}
 
-    public static EditFragment newInstance() {
-        EditFragment fragment = new EditFragment();
+    public static SelectFragment newInstance() {
+        SelectFragment fragment = new SelectFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -24,26 +23,14 @@ public class EditFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        Button button = (Button)getActivity().findViewById(R.id.button_register);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        if (getArguments() != null) {}
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_edit, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_select, container, false);
     }
 
     @Override
@@ -62,7 +49,6 @@ public class EditFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction();
     }

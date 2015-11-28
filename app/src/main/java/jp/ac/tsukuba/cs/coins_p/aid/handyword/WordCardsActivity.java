@@ -1,10 +1,9 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,7 +20,8 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy.DummyContent;
 public class WordCardsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         ItemFragment.OnListFragmentInteractionListener,
-        EditFragment.OnFragmentInteractionListener {
+        EditFragment.OnFragmentInteractionListener,
+        SelectFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,18 +87,13 @@ public class WordCardsActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_weak) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, QuizFragment.newInstance())
-                    .commit();
+            setFragment(R.id.container, QuizFragment.newInstance());
+        } else if (id == R.id.nav_learned){
+            setFragment(R.id.container, EditFragment.newInstance());
         } else if (id == R.id.nav_not_learned) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, ItemFragment.newInstance(10))
-                    .commit();
+            setFragment(R.id.container, ItemFragment.newInstance(10));
         } else if (id == R.id.nav_all) {
-        } else if (id == R.id.button_add){
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, EditFragment.newInstance())
-                    .commit();
+            setFragment(R.id.container, SelectFragment.newInstance());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -111,7 +106,18 @@ public class WordCardsActivity extends AppCompatActivity
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri){
+    public void onFragmentInteraction(){
 
     }
+
+    public void setFragment(int id, Fragment fragment){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(id, fragment)
+                .commit();
+
+    }
+
+
+
 }
