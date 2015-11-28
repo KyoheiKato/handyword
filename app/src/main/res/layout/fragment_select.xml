@@ -5,13 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.SelectFragment">
 
+    <TextView
+        android:id="@+id/text_question_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:layout_marginTopPercent="10%"
+        android:text="QUESTION_TYPE"
+        android:textSize="28sp"/>
+
     <Button
         android:id="@+id/button_word_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_widthPercent="80%"
         app:layout_heightPercent="20%"
-        app:layout_marginTopPercent="10%"
+        app:layout_marginTopPercent="25%"
         android:text="単語帳を開く"
         android:layout_gravity="center_horizontal"/>
     <Button
@@ -20,7 +29,7 @@
         android:layout_height="0dp"
         app:layout_widthPercent="80%"
         app:layout_heightPercent="20%"
-        app:layout_marginTopPercent="35%"
+        app:layout_marginTopPercent="50%"
         android:text="問題を出す"
         android:layout_gravity="center_horizontal"/>
 

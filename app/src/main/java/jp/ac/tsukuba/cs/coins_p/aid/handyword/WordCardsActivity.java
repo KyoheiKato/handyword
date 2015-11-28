@@ -23,6 +23,11 @@ public class WordCardsActivity extends AppCompatActivity
         EditFragment.OnFragmentInteractionListener,
         SelectFragment.OnFragmentInteractionListener{
 
+    private static final String WEAK = "weak";
+    private static final String LEARNED = "learned";
+    private static final String NOT_LEARNED = "not_learned";
+    private static final String ALL = "all";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,13 +92,13 @@ public class WordCardsActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_weak) {
-            setFragment(R.id.container, QuizFragment.newInstance());
+            setFragment(R.id.container, SelectFragment.newInstance(WEAK));
         } else if (id == R.id.nav_learned){
-            setFragment(R.id.container, EditFragment.newInstance());
+            setFragment(R.id.container, SelectFragment.newInstance(LEARNED));
         } else if (id == R.id.nav_not_learned) {
-            setFragment(R.id.container, ItemFragment.newInstance(10));
+            setFragment(R.id.container, SelectFragment.newInstance(NOT_LEARNED));
         } else if (id == R.id.nav_all) {
-            setFragment(R.id.container, SelectFragment.newInstance());
+            setFragment(R.id.container, SelectFragment.newInstance(ALL));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

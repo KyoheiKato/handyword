@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="単語帳">
+    <item android:title="単語帳"
+        android:checkableBehavior="single">
         <menu>
-            <item
-                android:id="@+id/nav_weak"
-                android:icon="@android:drawable/ic_dialog_alert"
-                android:title="苦手な単語" />
-            <item
-                android:id="@+id/nav_learned"
-                android:icon="@android:drawable/ic_input_get"
-                android:title="最近覚えた単語" />
-            <item
-                android:id="@+id/nav_not_learned"
-                android:icon="@android:drawable/ic_dialog_dialer"
-                android:title="まだ覚えていない単語" />
-            <item
-                android:id="@+id/nav_all"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="すべての単語" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_weak"
+                    android:icon="@android:drawable/ic_dialog_alert"
+                    android:title="苦手な単語" />
+                <item
+                    android:id="@+id/nav_learned"
+                    android:icon="@android:drawable/ic_input_get"
+                    android:title="最近覚えた単語" />
+                <item
+                    android:id="@+id/nav_not_learned"
+                    android:icon="@android:drawable/ic_dialog_dialer"
+                    android:title="まだ覚えていない単語" />
+                <item
+                    android:id="@+id/nav_all"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="すべての単語" />
+            </group>
         </menu>
     </item>
     <group android:checkableBehavior="single">
