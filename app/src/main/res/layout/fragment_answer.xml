@@ -1,0 +1,44 @@
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.AnswerFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        app:layout_marginTopPercent="25%"
+        android:text="@string/sample_text_question"
+        android:textSize="36sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        app:layout_marginTopPercent="40%"
+        android:text="@string/sample_text_answer"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="36sp"/>
+
+    <Button
+        android:id="@+id/button_wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_marginTopPercent="60%"
+        app:layout_marginLeftPercent="10%"
+        app:layout_widthPercent="40%"
+        app:layout_heightPercent="20%"
+        android:text="不正解"/>
+    <Button
+        android:id="@+id/button_correct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_marginTopPercent="60%"
+        app:layout_marginLeftPercent="50%"
+        app:layout_widthPercent="40%"
+        app:layout_heightPercent="20%"
+        android:text="正解"/>
+
+</android.support.percent.PercentFrameLayout>

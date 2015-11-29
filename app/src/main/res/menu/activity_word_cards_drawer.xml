@@ -29,6 +29,10 @@
             android:id="@+id/nav_search"
             android:icon="@android:drawable/ic_menu_search"
             android:title="単語の検索" />
+        <item
+            android:id="@+id/nav_chart"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="学習の記録" />
     </group>
 
 </menu>

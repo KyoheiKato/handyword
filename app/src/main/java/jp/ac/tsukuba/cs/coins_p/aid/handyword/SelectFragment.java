@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -15,12 +16,16 @@ public class SelectFragment extends Fragment {
     private static final String LEARNED = "learned";
     private static final String NOT_LEARNED = "not_learned";
     private static final String ALL = "all";
-
-    private OnFragmentInteractionListener mListener;
     private static final String QUESTION_TYPE = "question_type";
 
     private String mQuestionType;
-    private String questionTypeText;
+
+    private SelectFragmentCallback mListener;
+
+    public interface SelectFragmentCallback {
+        void onWordCardsSelected();
+        void onQuizSelected();
+    }
 
     public SelectFragment() {}
 
@@ -49,18 +54,18 @@ public class SelectFragment extends Fragment {
     @Override
     public void onStart(){
         super.onStart();
-        TextView textView = (TextView)getActivity().findViewById(R.id.text_question_type);
-        textView.setText(getQuestionTypeText(mQuestionType));
+        initTextView();
+        initButtons();
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof SelectFragmentCallback) {
+            mListener = (SelectFragmentCallback) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement SelectFragmentCallback");
         }
     }
 
@@ -69,8 +74,27 @@ public class SelectFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction();
+
+    public void initTextView(){
+        TextView textView = (TextView)getActivity().findViewById(R.id.text_question_type);
+        textView.setText(getQuestionTypeText(mQuestionType));
+    }
+
+    public void initButtons(){
+        Button quizButton = (Button)getActivity().findViewById(R.id.button_quiz);
+        quizButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onQuizSelected();
+            }
+        });
+        Button wordCardsButton = (Button)getActivity().findViewById(R.id.button_word_card);
+        wordCardsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onWordCardsSelected();
+            }
+        });
     }
 
     public String getQuestionTypeText(String questionType){

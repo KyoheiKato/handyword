@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,15 +12,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy.ChartFragment;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy.DummyContent;
 
 public class WordCardsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         ItemFragment.OnListFragmentInteractionListener,
         EditFragment.OnFragmentInteractionListener,
-        SelectFragment.OnFragmentInteractionListener{
+        SelectFragment.SelectFragmentCallback,
+        QuizFragment.QuizFragmentCallback,
+        AnswerFragment.AnswerFragmentCallback{
 
     private static final String WEAK = "weak";
     private static final String LEARNED = "learned";
@@ -39,23 +40,25 @@ public class WordCardsActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, EditFragment.newInstance())
-                        .commit();
+                setFragment(R.id.container, EditFragment.newInstance());
             }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
-        Button button = (Button)findViewById(R.id.button_add);
+    @Override
+        public void onStart(){
+        super.onStart();
+        setFragment(R.id.container, ChartFragment.newInstance());
     }
 
     @Override
@@ -63,8 +66,6 @@ public class WordCardsActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
     }
 
@@ -88,7 +89,6 @@ public class WordCardsActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
         int id = item.getItemId();
 
         if (id == R.id.nav_weak) {
@@ -99,6 +99,8 @@ public class WordCardsActivity extends AppCompatActivity
             setFragment(R.id.container, SelectFragment.newInstance(NOT_LEARNED));
         } else if (id == R.id.nav_all) {
             setFragment(R.id.container, SelectFragment.newInstance(ALL));
+        } else if (id == R.id.nav_chart) {
+            setFragment(R.id.container, ChartFragment.newInstance());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -112,7 +114,30 @@ public class WordCardsActivity extends AppCompatActivity
 
     @Override
     public void onFragmentInteraction(){
+    }
 
+    @Override
+    public void onQuizSelected(){
+        setFragment(R.id.container, QuizFragment.newInstance());
+    }
+
+    @Override
+    public void onWordCardsSelected(){
+        setFragment(R.id.container, ItemFragment.newInstance(20));
+    }
+
+    @Override
+    public void onAnswerButtonClicked(){
+        setFragment(R.id.container, AnswerFragment.newInstance());
+    }
+
+    @Override
+    public void onCorrectButtonClicked(){
+        setFragment(R.id.container, QuizFragment.newInstance());
+    }
+    @Override
+    public void onWrongButtonClicked(){
+        setFragment(R.id.container, QuizFragment.newInstance());
     }
 
     public void setFragment(int id, Fragment fragment){
@@ -120,7 +145,6 @@ public class WordCardsActivity extends AppCompatActivity
                 .beginTransaction()
                 .replace(id, fragment)
                 .commit();
-
     }
 
 

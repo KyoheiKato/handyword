@@ -24,7 +24,7 @@
         android:text="単語帳を開く"
         android:layout_gravity="center_horizontal"/>
     <Button
-        android:id="@+id/button_question"
+        android:id="@+id/button_quiz"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_widthPercent="80%"
