@@ -40,7 +40,8 @@ public class WordCardsActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setFragment(R.id.container, EditFragment.newInstance());
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.openDrawer(GravityCompat.START);
             }
         });
 
@@ -101,6 +102,8 @@ public class WordCardsActivity extends AppCompatActivity
             setFragment(R.id.container, SelectFragment.newInstance(ALL));
         } else if (id == R.id.nav_chart) {
             setFragment(R.id.container, ChartFragment.newInstance());
+        } else if (id == R.id.nav_add) {
+            setFragment(R.id.container, EditFragment.newInstance());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

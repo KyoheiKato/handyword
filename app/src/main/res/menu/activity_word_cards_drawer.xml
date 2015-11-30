@@ -33,6 +33,10 @@
             android:id="@+id/nav_chart"
             android:icon="@android:drawable/ic_menu_sort_by_size"
             android:title="学習の記録" />
+        <item
+            android:id="@+id/nav_add"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="単語を追加する" />
     </group>
 
 </menu>
