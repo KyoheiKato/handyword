@@ -18,19 +18,21 @@
         android:id="@+id/button_word_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_widthPercent="80%"
-        app:layout_heightPercent="20%"
-        app:layout_marginTopPercent="25%"
+        app:layout_widthPercent="90%"
+        app:layout_heightPercent="30%"
+        app:layout_marginTopPercent="20%"
         android:text="単語帳を開く"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"/>
     <Button
         android:id="@+id/button_quiz"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_widthPercent="80%"
-        app:layout_heightPercent="20%"
-        app:layout_marginTopPercent="50%"
+        app:layout_widthPercent="90%"
+        app:layout_heightPercent="30%"
+        app:layout_marginTopPercent="55%"
         android:text="問題を出す"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"/>
 
 </android.support.percent.PercentFrameLayout>

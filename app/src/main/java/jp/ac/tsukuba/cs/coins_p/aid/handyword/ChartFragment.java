@@ -1,12 +1,10 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.R;
 
 public class ChartFragment extends Fragment {
     public ChartFragment() {}

@@ -19,9 +19,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_marginTopPercent="40%"
-        app:layout_widthPercent="60%"
+        app:layout_widthPercent="90%"
         app:layout_heightPercent="40%"
         android:text="答えを見る"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"/>
 
 </android.support.percent.PercentFrameLayout>

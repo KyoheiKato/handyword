@@ -1,0 +1,59 @@
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.ConfigQuizFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="50%"
+        app:layout_marginTopPercent="10%"
+        android:gravity="center_horizontal"
+        android:text="出題数"
+        android:textSize="30sp"/>
+
+    <NumberPicker
+        app:layout_marginTopPercent="20%"
+        app:layout_marginLeftPercent="10%"
+        app:layout_widthPercent="30%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </NumberPicker>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="50%"
+        app:layout_marginTopPercent="10%"
+        app:layout_marginLeftPercent="45%"
+        android:gravity="center_horizontal"
+        android:text="ランダム出題"
+        android:textSize="30sp"/>
+
+    <ToggleButton
+        app:layout_marginTopPercent="20%"
+        app:layout_marginLeftPercent="50%"
+        app:layout_widthPercent="40%"
+        app:layout_heightPercent="20%"
+        android:textOn="する"
+        android:textOff="しない"
+        android:textSize="30sp"
+        android:id="@+id/ToggleButton"
+        android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    </ToggleButton>
+
+    <Button
+        android:id="@+id/button_start"
+        app:layout_widthPercent="60%"
+        app:layout_heightPercent="30%"
+        app:layout_marginTopPercent="60%"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="出題を始める"
+        android:textSize="30sp"/>
+
+</android.support.percent.PercentFrameLayout>

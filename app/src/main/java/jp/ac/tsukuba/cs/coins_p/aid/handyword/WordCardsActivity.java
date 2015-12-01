@@ -13,16 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy.ChartFragment;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.dummy.DummyContent;
-
 public class WordCardsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        ItemFragment.OnListFragmentInteractionListener,
         EditFragment.OnFragmentInteractionListener,
         SelectFragment.SelectFragmentCallback,
         QuizFragment.QuizFragmentCallback,
-        AnswerFragment.AnswerFragmentCallback{
+        AnswerFragment.AnswerFragmentCallback,
+        ConfigQuizFragment.OnStartButtonClickedListener{
 
     private static final String WEAK = "weak";
     private static final String LEARNED = "learned";
@@ -112,21 +109,23 @@ public class WordCardsActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item){
-    }
-
-    @Override
     public void onFragmentInteraction(){
     }
 
     @Override
     public void onQuizSelected(){
-        setFragment(R.id.container, QuizFragment.newInstance());
+        setFragment(R.id.container, ConfigQuizFragment.newInstance());
     }
 
     @Override
     public void onWordCardsSelected(){
-        setFragment(R.id.container, ItemFragment.newInstance(20));
+        setFragment(R.id.container, WordCardFragment.newInstance());
+    }
+
+    @Override
+    public void onStartButtonClicked(){
+        setFragment(R.id.container, QuizFragment.newInstance());
+
     }
 
     @Override

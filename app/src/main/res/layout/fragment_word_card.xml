@@ -1,0 +1,74 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.WordCardFragment">
+
+    <android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            app:layout_marginTopPercent="10%"
+            android:id="@+id/text_japanese"
+            android:text="日本語"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            app:layout_marginTopPercent="20%"
+            android:id="@+id/text_english"
+            android:text="英語"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginTopPercent="40%">
+            <TextView
+                android:id="@+id/text_wrong_count_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="間違えた回数 : "
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/text_wrong_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="n回"
+                android:textSize="30sp"/>
+        </LinearLayout>
+        <Button
+            app:layout_marginTopPercent="50%"
+            app:layout_marginLeftPercent="0%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="30%"
+            android:text="前へ"
+            android:textSize="30sp"/>
+
+        <Button
+            app:layout_marginTopPercent="50%"
+            app:layout_marginLeftPercent="50%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="30%"
+            android:text="前へ"
+            android:textSize="30sp"/>
+    </android.support.percent.PercentFrameLayout>
+
+</FrameLayout>
