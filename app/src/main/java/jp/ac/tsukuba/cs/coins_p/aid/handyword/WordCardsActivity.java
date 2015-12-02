@@ -1,7 +1,6 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -30,6 +29,12 @@ public class WordCardsActivity extends AppCompatActivity
     private static final String LEARNED = "learned";
     private static final String NOT_LEARNED = "not_learned";
     private static final String ALL = "all";
+
+    private static int LEFT_CONTAINER = R.id.container_left;
+    private static int RIGHT_CONTAINER = R.id.container_right;
+    private static int CONTAINER = R.id.container;
+
+    private int container = RIGHT_CONTAINER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +69,7 @@ public class WordCardsActivity extends AppCompatActivity
     @Override
         public void onStart(){
         super.onStart();
-        setFragment(R.id.container, ChartFragment.newInstance());
+        setFragment(container, ChartFragment.newInstance());
     }
 
     @Override
@@ -98,17 +103,18 @@ public class WordCardsActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_weak) {
-            setFragment(R.id.container, SelectFragment.newInstance(WEAK));
+            setFragment(container, SelectFragment.newInstance(WEAK));
         } else if (id == R.id.nav_learned){
-            setFragment(R.id.container, SelectFragment.newInstance(LEARNED));
+            setFragment(container, SelectFragment.newInstance(LEARNED));
         } else if (id == R.id.nav_not_learned) {
-            setFragment(R.id.container, SelectFragment.newInstance(NOT_LEARNED));
+            setFragment(container, SelectFragment.newInstance(NOT_LEARNED));
         } else if (id == R.id.nav_all) {
-            setFragment(R.id.container, SelectFragment.newInstance(ALL));
+            setFragment(container, SelectFragment.newInstance(ALL));
         } else if (id == R.id.nav_chart) {
-            setFragment(R.id.container, ChartFragment.newInstance());
+            setFragment(CONTAINER, ChartFragment.newInstance());
+
         } else if (id == R.id.nav_add) {
-            setFragment(R.id.container, EditFragment.newInstance());
+            setFragment(container, EditFragment.newInstance());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -122,37 +128,37 @@ public class WordCardsActivity extends AppCompatActivity
 
     @Override
     public void onQuizSelected(){
-        setFragment(R.id.container, ConfigQuizFragment.newInstance());
+        setFragment(container, ConfigQuizFragment.newInstance());
     }
 
     @Override
     public void onWordCardsSelected(){
-        setFragment(R.id.container, WordCardListFragment.newInstance());
+        setFragment(container, WordCardListFragment.newInstance());
     }
 
     @Override
     public void onStartButtonClicked(){
-        setFragment(R.id.container, QuizFragment.newInstance());
+        setFragment(container, QuizFragment.newInstance());
     }
 
     @Override
     public void onAnswerButtonClicked(){
-        setFragment(R.id.container, AnswerFragment.newInstance());
+        setFragment(container, AnswerFragment.newInstance());
     }
 
     @Override
     public void onCorrectButtonClicked(){
-        setFragment(R.id.container, QuizFragment.newInstance());
+        setFragment(container, QuizFragment.newInstance());
     }
 
     @Override
     public void onWrongButtonClicked(){
-        setFragment(R.id.container, QuizFragment.newInstance());
+        setFragment(container, QuizFragment.newInstance());
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-        setFragment(R.id.container, WordCardFragment.newInstance());
+        setFragment(container, WordCardFragment.newInstance());
     }
 
     public void setFragment(int id, Fragment fragment){

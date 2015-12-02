@@ -16,22 +16,20 @@
 
     <Button
         android:id="@+id/button_word_card"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_marginTopPercent="30%"
         app:layout_marginLeftPercent="0%"
-        app:layout_widthPercent="50%"
         app:layout_heightPercent="30%"
         android:text="単語帳を\n開く"
         android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button_quiz"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_marginTopPercent="60%"
         app:layout_marginLeftPercent="0%"
-        app:layout_widthPercent="50%"
         app:layout_heightPercent="30%"
         android:text="問題を\n出す"
         android:textSize="30sp"/>

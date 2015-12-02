@@ -9,8 +9,7 @@
 
     <android.support.percent.PercentFrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_widthPercent="50%">
+        android:layout_height="match_parent">
         <TextView
             android:paddingTop="5sp"
             android:id="@+id/label_japanese"

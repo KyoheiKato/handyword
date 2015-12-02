@@ -6,28 +6,25 @@
     tools:context="jp.ac.tsukuba.cs.coins_p.aid.handyword.ConfigQuizFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_widthPercent="50%"
         app:layout_marginTopPercent="0%"
-        android:gravity="center_horizontal"
         android:text="出題数"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:gravity="center_horizontal|bottom"/>
 
     <NumberPicker
         android:id="@+id/number_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_marginTopPercent="10%"
         app:layout_marginLeftPercent="0%"
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="20%"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        app:layout_heightPercent="20%">
     </NumberPicker>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_widthPercent="50%"
         app:layout_heightPercent="10%"
         app:layout_marginTopPercent="30%"
         app:layout_marginLeftPercent="0%"
@@ -38,23 +35,21 @@
     <ToggleButton
         app:layout_marginTopPercent="40%"
         app:layout_marginLeftPercent="0%"
-        app:layout_widthPercent="50%"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_heightPercent="20%"
         android:textOn="する"
         android:textOff="しない"
         android:textSize="30sp"
-        android:id="@+id/ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/ToggleButton">
     </ToggleButton>
 
     <Button
         android:id="@+id/button_start"
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="20%"
         app:layout_marginTopPercent="60%"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_heightPercent="20%"
         android:text="出題を始める"
         android:textSize="30sp"/>
 
