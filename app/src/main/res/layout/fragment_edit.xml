@@ -35,7 +35,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_heightPercent="40%"
+            app:layout_heightPercent="30%"
             app:layout_marginTopPercent="20%"
             android:orientation="vertical">
             <Button
@@ -56,14 +56,14 @@
             android:text="英語"
             android:layout_gravity="center_horizontal"
             app:layout_heightPercent="10%"
-            app:layout_marginTopPercent="60%"
+            app:layout_marginTopPercent="50%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_heightPercent="15%"
-            app:layout_marginTopPercent="65%"
+            app:layout_marginTopPercent="55%"
             android:background="#FFEEFF">
             <EditText
                 android:id="@+id/english"
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_heightPercent="20%"
-            app:layout_marginTopPercent="80%"
+            app:layout_marginTopPercent="70%"
             android:layout_gravity="center_horizontal"/>
     </android.support.percent.PercentFrameLayout>
 </android.support.percent.PercentFrameLayout>

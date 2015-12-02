@@ -33,7 +33,7 @@
         app:layout_marginLeftPercent="0%"
         android:text="ランダム出題"
         android:textSize="30sp"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal|bottom"/>
 
     <ToggleButton
         app:layout_marginTopPercent="40%"
@@ -45,14 +45,14 @@
         android:textSize="30sp"
         android:id="@+id/ToggleButton"
         android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+        android:layout_height="wrap_content">
     </ToggleButton>
 
     <Button
         android:id="@+id/button_start"
         app:layout_widthPercent="50%"
         app:layout_heightPercent="20%"
-        app:layout_marginTopPercent="70%"
+        app:layout_marginTopPercent="60%"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="出題を始める"
