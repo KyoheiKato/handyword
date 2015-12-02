@@ -15,4 +15,7 @@
     <string name="chart_item_not_learned">まだ覚えていない単語</string>
     <string name="chart_item_learned">覚えた単語</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

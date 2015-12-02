@@ -6,7 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.Date;
+
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 
 
 public class EditFragment extends Fragment {
@@ -33,7 +40,16 @@ public class EditFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText japanese = (EditText)getActivity().findViewById(R.id.japanese);
+                EditText english = (EditText)getActivity().findViewById(R.id.english);
 
+                WordCard wordCard = new WordCard();
+                wordCard.setWord(japanese.getText().toString());
+                wordCard.setTranslatedWord(english.getText().toString());
+                wordCard.setCreatedAt(new Date());
+                wordCard.setUpdatedAt(new Date());
+
+                WordCardModel.getInstance().saveWordCard(wordCard);
             }
         });
     }

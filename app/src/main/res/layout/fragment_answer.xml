@@ -29,17 +29,18 @@
         app:layout_marginTopPercent="40%"
         app:layout_marginLeftPercent="5%"
         app:layout_widthPercent="45%"
-        app:layout_heightPercent="40%"
+        app:layout_heightPercent="30%"
         android:text="不正解"
         android:textSize="30sp"/>
+
     <Button
         android:id="@+id/button_correct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_marginTopPercent="40%"
-        app:layout_marginLeftPercent="50%"
+        app:layout_marginTopPercent="70%"
+        app:layout_marginLeftPercent="5%"
         app:layout_widthPercent="45%"
-        app:layout_heightPercent="40%"
+        app:layout_heightPercent="30%"
         android:text="正解"
         android:textSize="30sp"/>
 

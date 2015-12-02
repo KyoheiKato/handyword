@@ -9,6 +9,7 @@ import io.realm.Realm;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 
 public class WordCardModel {
+
     private static final WordCardModel instance = new WordCardModel();
 
     private Realm realmInstance;
@@ -21,7 +22,7 @@ public class WordCardModel {
         return instance;
     }
 
-    public void initRealmInstancec(Context context) {
+    public void initRealmInstance(Context context) {
         if (realmInstance == null)
             realmInstance = Realm.getInstance(context);
     }
@@ -45,6 +46,12 @@ public class WordCardModel {
     }
 
     private int getNextPrimaryKey() {
-        return realmInstance.where(WordCard.class).max("id").intValue() + 1;
+        int res;
+        if(realmInstance.where(WordCard.class).max("id") != null) {
+            res = realmInstance.where(WordCard.class).max("id").intValue() + 1;
+        } else {
+            res = 0;
+        }
+        return res;
     }
 }

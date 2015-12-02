@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <TextView
-            app:layout_marginTopPercent="10%"
+            app:layout_marginTopPercent="5%"
             android:id="@+id/text_japanese"
             android:text="日本語"
             android:textSize="30sp"
@@ -22,7 +22,7 @@
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <TextView
-            app:layout_marginTopPercent="20%"
+            app:layout_marginTopPercent="15%"
             android:id="@+id/text_english"
             android:text="英語"
             android:textSize="30sp"
@@ -35,7 +35,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_marginTopPercent="40%">
+            android:layout_gravity="center_horizontal"
+            app:layout_marginTopPercent="30%">
             <TextView
                 android:id="@+id/text_wrong_count_label"
                 android:layout_width="wrap_content"
@@ -50,25 +51,27 @@
                 android:text="n回"
                 android:textSize="30sp"/>
         </LinearLayout>
+
         <Button
-            app:layout_marginTopPercent="50%"
-            app:layout_marginLeftPercent="0%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_marginTopPercent="40%"
+            app:layout_marginLeftPercent="0%"
             app:layout_widthPercent="50%"
             app:layout_heightPercent="30%"
-            android:text="前へ"
+            android:text="＜前へ"
             android:textSize="30sp"/>
 
         <Button
-            app:layout_marginTopPercent="50%"
-            app:layout_marginLeftPercent="50%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_marginTopPercent="70%"
+            app:layout_marginLeftPercent="0%"
             app:layout_widthPercent="50%"
             app:layout_heightPercent="30%"
-            android:text="前へ"
+            android:text="次へ＞"
             android:textSize="30sp"/>
+
     </android.support.percent.PercentFrameLayout>
 
 </FrameLayout>

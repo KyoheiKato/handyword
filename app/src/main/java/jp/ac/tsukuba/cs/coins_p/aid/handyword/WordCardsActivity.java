@@ -12,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
 
 public class WordCardsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -19,7 +22,8 @@ public class WordCardsActivity extends AppCompatActivity
         SelectFragment.SelectFragmentCallback,
         QuizFragment.QuizFragmentCallback,
         AnswerFragment.AnswerFragmentCallback,
-        ConfigQuizFragment.OnStartButtonClickedListener{
+        ConfigQuizFragment.OnStartButtonClickedListener,
+        WordCardListFragment.OnItemClickListener{
 
     private static final String WEAK = "weak";
     private static final String LEARNED = "learned";
@@ -51,6 +55,9 @@ public class WordCardsActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        WordCardModel.getInstance().initRealmInstance(this);
     }
 
     @Override
@@ -119,13 +126,12 @@ public class WordCardsActivity extends AppCompatActivity
 
     @Override
     public void onWordCardsSelected(){
-        setFragment(R.id.container, WordCardFragment.newInstance());
+        setFragment(R.id.container, WordCardListFragment.newInstance());
     }
 
     @Override
     public void onStartButtonClicked(){
         setFragment(R.id.container, QuizFragment.newInstance());
-
     }
 
     @Override
@@ -137,9 +143,15 @@ public class WordCardsActivity extends AppCompatActivity
     public void onCorrectButtonClicked(){
         setFragment(R.id.container, QuizFragment.newInstance());
     }
+
     @Override
     public void onWrongButtonClicked(){
         setFragment(R.id.container, QuizFragment.newInstance());
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+        setFragment(R.id.container, WordCardFragment.newInstance());
     }
 
     public void setFragment(int id, Fragment fragment){
@@ -148,7 +160,5 @@ public class WordCardsActivity extends AppCompatActivity
                 .replace(id, fragment)
                 .commit();
     }
-
-
 
 }
