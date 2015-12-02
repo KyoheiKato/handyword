@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.NumberPicker;
 
 public class ConfigQuizFragment extends Fragment {
     private OnStartButtonClickedListener mListener;
@@ -35,6 +36,9 @@ public class ConfigQuizFragment extends Fragment {
             mListener.onStartButtonClicked();
             }
         });
+        NumberPicker numberPicker = (NumberPicker)getActivity().findViewById(R.id.number_picker);
+        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(100);
     }
 
     @Override

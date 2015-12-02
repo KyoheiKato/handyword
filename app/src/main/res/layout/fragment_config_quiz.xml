@@ -15,6 +15,7 @@
         android:textSize="30sp"/>
 
     <NumberPicker
+        android:id="@+id/number_picker"
         app:layout_marginTopPercent="20%"
         app:layout_marginLeftPercent="10%"
         app:layout_widthPercent="30%"
