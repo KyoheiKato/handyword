@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        app:layout_marginTopPercent="10%"
+        app:layout_marginTopPercent="17%"
         android:text="QUESTION_TYPE"
         android:textSize="28sp"/>
 
@@ -18,7 +18,7 @@
         android:id="@+id/button_word_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_marginTopPercent="30%"
+        app:layout_marginTopPercent="40%"
         app:layout_marginLeftPercent="0%"
         app:layout_heightPercent="30%"
         android:text="単語帳を\n開く"
@@ -28,7 +28,7 @@
         android:id="@+id/button_quiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_marginTopPercent="60%"
+        app:layout_marginTopPercent="70%"
         app:layout_marginLeftPercent="0%"
         app:layout_heightPercent="30%"
         android:text="問題を\n出す"

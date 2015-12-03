@@ -15,7 +15,8 @@
         android:id="@+id/container_left"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:layout_widthPercent="50%"/>
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="90%"/>
 
     <include
         layout="@layout/dummy_layout"
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_widthPercent="50%"
+        app:layout_heightPercent="90%"
         app:layout_marginLeftPercent="50%"/>
 
 </android.support.percent.PercentFrameLayout>

@@ -37,7 +37,7 @@
         app:layout_marginLeftPercent="0%"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_heightPercent="20%"
+        app:layout_heightPercent="30%"
         android:textOn="する"
         android:textOff="しない"
         android:textSize="30sp"
@@ -46,10 +46,10 @@
 
     <Button
         android:id="@+id/button_start"
-        app:layout_marginTopPercent="60%"
+        app:layout_marginTopPercent="70%"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_heightPercent="20%"
+        app:layout_heightPercent="30%"
         android:text="出題を始める"
         android:textSize="30sp"/>
 

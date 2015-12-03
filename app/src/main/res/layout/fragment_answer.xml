@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         app:layout_marginTopPercent="40%"
         app:layout_marginLeftPercent="0%"
-        app:layout_heightPercent="25%"
+        app:layout_heightPercent="30%"
         android:text="不正解"
         android:textSize="30sp"/>
 
@@ -36,9 +36,9 @@
         android:id="@+id/button_correct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_marginTopPercent="65%"
+        app:layout_marginTopPercent="70%"
         app:layout_marginLeftPercent="0%"
-        app:layout_heightPercent="25%"
+        app:layout_heightPercent="30%"
         android:text="正解"
         android:textSize="30sp"/>
 

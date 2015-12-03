@@ -69,7 +69,7 @@ public class WordCardsActivity extends AppCompatActivity
     @Override
         public void onStart(){
         super.onStart();
-        setFragment(container, ChartFragment.newInstance());
+        setFragment(CONTAINER, ChartFragment.newInstance());
     }
 
     @Override

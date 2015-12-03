@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_marginTopPercent="40%"
-        app:layout_heightPercent="50%"
+        app:layout_heightPercent="60%"
         android:text="答えを見る"
         android:textSize="30sp"/>
 
