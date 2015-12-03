@@ -21,7 +21,7 @@ public class WordCardModel {
         return instance;
     }
 
-    public void initRealmInstancec(Context context) {
+    public void initRealmInstance(Context context) {
         if (realmInstance == null)
             realmInstance = Realm.getInstance(context);
     }
@@ -44,7 +44,15 @@ public class WordCardModel {
         return realmInstance.where(WordCard.class).findAll();
     }
 
+    public WordCard getWordCard(int id){
+        return realmInstance.where(WordCard.class).equalTo("id",id).findFirst();
+    }
+
     private int getNextPrimaryKey() {
-        return realmInstance.where(WordCard.class).max("id").intValue() + 1;
+        if(realmInstance.where(WordCard.class).max("id") != null) {
+            return realmInstance.where(WordCard.class).max("id").intValue() + 1;
+        } else {
+            return 0;
+        }
     }
 }

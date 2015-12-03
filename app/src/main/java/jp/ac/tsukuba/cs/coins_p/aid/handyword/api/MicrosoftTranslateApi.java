@@ -19,7 +19,6 @@ public interface MicrosoftTranslateApi {
             @Field("scope") String scope
     );
 
-    @FormUrlEncoded
     @GET("/Translate")
     Observable<Translation> getTranslatedWord(
             @Query("appId") String appId,

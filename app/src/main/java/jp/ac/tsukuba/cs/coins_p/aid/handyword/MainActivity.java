@@ -1,5 +1,6 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint.TranslationEndpoint;
 
@@ -20,14 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        initButtons();
     }
 
     @Override
@@ -50,5 +45,43 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initButtons(){
+        Button weakButton = (Button)findViewById(R.id.button_weak);
+        weakButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WordCardsListActivity.class);
+                intent.putExtra("wordCardsType", "weak");
+                startActivity(intent);
+            }
+        });
+        Button notLearnedButton = (Button)findViewById(R.id.button_not_learned);
+        notLearnedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WordCardsListActivity.class);
+                intent.putExtra("wordCardsType", "notLearned");
+                startActivity(intent);
+            }
+        });
+        Button allButton = (Button)findViewById(R.id.button_all);
+        allButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WordCardsListActivity.class);
+                intent.putExtra("wordCardsType", "all");
+                startActivity(intent);
+            }
+        });
+        Button addButton = (Button)findViewById(R.id.button_add);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddWordCardActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
