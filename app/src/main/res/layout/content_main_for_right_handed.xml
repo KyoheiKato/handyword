@@ -33,6 +33,19 @@
             android:text="@string/action_add"
             android:drawableLeft="@android:drawable/ic_input_add"
             android:layout_weight="5"/>
+
+        <Button
+            app:layout_marginTopPercent="50%"
+            app:layout_marginLeftPercent="0%"
+            app:layout_heightPercent="20%"
+            android:id="@+id/menu_question_words_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_menu_question"
+            android:drawableLeft="@android:drawable/ic_input_add"
+            android:layout_weight="5"/>
+
+
     </android.support.percent.PercentFrameLayout>
 
     <View

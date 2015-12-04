@@ -12,14 +12,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.RegisterWordCardActivity;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardQuestionActivity;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardRegisterActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardsListActivity;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.menu_all_words_button)
-    Button allWordsButton;
-    @Bind(R.id.menu_add_words_button)
-    Button addWordsButton;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 
@@ -56,23 +53,29 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({
             R.id.menu_all_words_button,
-            R.id.menu_add_words_button
+            R.id.menu_add_words_button,
+            R.id.menu_question_words_button
     })
     public void moveToFuncActivity(Button menuButton) {
         String menuType;
+        Intent intent;
         switch (menuButton.getId()) {
             case R.id.menu_all_words_button:
                 menuType = "all";
                 break;
             case R.id.menu_add_words_button:
-                Intent intent = new Intent(this, RegisterWordCardActivity.class);
+                intent = new Intent(this, WordCardRegisterActivity.class);
+                startActivity(intent);
+                return;
+            case R.id.menu_question_words_button:
+                intent = new Intent(this, WordCardQuestionActivity.class);
                 startActivity(intent);
                 return;
             default:
                 menuType = null;
                 break;
         }
-        Intent intent = WordCardsListActivity.createNewIntent(this, menuType);
+        intent = WordCardsListActivity.createNewIntent(this, menuType);
         startActivity(intent);
     }
 }

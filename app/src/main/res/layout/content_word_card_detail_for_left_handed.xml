@@ -24,7 +24,7 @@
         android:layout_weight="5">
         <TextView
             app:layout_marginTopPercent="5%"
-            android:id="@+id/text_japanese"
+            android:id="@+id/before_translate_japanese_text"
             android:text="日本語"
             android:textSize="25sp"
             android:layout_gravity="center_horizontal"
@@ -34,7 +34,7 @@
 
         <TextView
             app:layout_marginTopPercent="15%"
-            android:id="@+id/text_english"
+            android:id="@+id/after_translate_english_text"
             android:text="英語"
             android:textSize="25sp"
             android:layout_gravity="center_horizontal"

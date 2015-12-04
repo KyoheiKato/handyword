@@ -22,12 +22,9 @@
     <string name="chart_item_not_learned">まだ覚えていない単語</string>
     <string name="chart_item_learned">覚えた単語</string>
 
-    <string name="word_type_weak">苦手な単語</string>
-    <string name="word_type_not_learned">まだ覚えていない単語</string>
-    <string name="word_type_learned">最近覚えた単語</string>
     <string name="word_type_all">すべての単語</string>
-    <string name="action_search">単語の検索</string>
     <string name="action_add">単語の追加</string>
+    <string name="main_menu_question">単語練習</string>
     <string name="title_activity_edit_word_card">EditWordCardActivity</string>
     <string name="title_activity_word_cards_list">WordCardsListActivity</string>
     <string name="title_activity_word_card_detail">WordCardDetailActivity</string>
@@ -37,6 +34,12 @@
     <string name="register_word_translate_dialog_message">しばらくお待ちください。</string>
     <string name="register_word_caution_dialog_title">確認</string>
     <string name="register_word_caution_dialog_message">作成中の単語帳を削除してもよろしいですか？</string>
+    <string name="register_word_caution_error">通信に失敗しました。</string>
 
+    // For question word card activity
+    <string name="question_word_activity_title">出題</string>
+    <string name="question_word_display_button">表示</string>
+    <string name="question_word_no_display_button">非表示</string>
+    <string name="question_word_next_question_button">次の問題</string>
 
 </resources>
