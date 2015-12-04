@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:layout_heightPercent="90%">
         <ListView
-            android:id="@+id/list_view"
+            android:id="@+id/word_card_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5">

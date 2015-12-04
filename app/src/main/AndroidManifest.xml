@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".wordcard.AddWordCardActivity"
+            android:name=".wordcard.RegisterWordCardActivity"
             android:label="@string/title_activity_edit_word_card"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

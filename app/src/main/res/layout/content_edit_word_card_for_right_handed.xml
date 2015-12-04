@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".wordcard.AddWordCardActivity"
+    tools:context=".wordcard.RegisterWordCardActivity"
     tools:showIn="@layout/activity_edit_word_card">
     <android.support.percent.PercentFrameLayout
         android:layout_width="match_parent"

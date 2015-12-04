@@ -12,7 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
-import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.AddWordCardActivity;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.RegisterWordCardActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardsListActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 menuType = "all";
                 break;
             case R.id.menu_add_words_button:
-                Intent intent = new Intent(this, AddWordCardActivity.class);
+                Intent intent = new Intent(this, RegisterWordCardActivity.class);
                 startActivity(intent);
                 return;
             default:
