@@ -33,7 +33,6 @@ public class AddWordCardActivity extends AppCompatActivity {
         japaneseEditText = (EditText)findViewById(R.id.edit_text_japanese);
         englishEditText = (EditText)findViewById(R.id.edit_text_english);
         initButtons();
-
     }
 
     public void initButtons(){

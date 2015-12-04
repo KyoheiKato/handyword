@@ -45,7 +45,7 @@ public class WordCardModel {
     }
 
     public WordCard getWordCard(int id){
-        return realmInstance.where(WordCard.class).equalTo("id",id).findFirst();
+        return realmInstance.where(WordCard.class).equalTo("id", id).findFirst();
     }
 
     private int getNextPrimaryKey() {
@@ -54,5 +54,19 @@ public class WordCardModel {
         } else {
             return 0;
         }
+    }
+
+    public static WordCard createWordCardWith(String word, String translatedWord) {
+        WordCard wordCard = new WordCard();
+        wordCard.setWord(word);
+        wordCard.setTranslatedWord(translatedWord);
+        initDates(wordCard);
+        return wordCard;
+    }
+
+    private static void initDates(WordCard wordCard) {
+        Date currentTime = new Date();
+        wordCard.setCreatedAt(currentTime);
+        wordCard.setUpdatedAt(currentTime);
     }
 }

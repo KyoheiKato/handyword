@@ -16,6 +16,7 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.R;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 
+
 public class WordCardsListActivity extends AppCompatActivity {
 
     ListView listView;
