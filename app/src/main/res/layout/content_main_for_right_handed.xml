@@ -11,30 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5">
+
         <Button
             app:layout_marginTopPercent="0%"
-            app:layout_marginLeftPercent="0%"
-            app:layout_heightPercent="20%"
-            android:id="@+id/menu_weak_words_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/word_type_weak"
-            android:drawableLeft="@android:drawable/ic_dialog_alert"
-            android:layout_weight="5"/>
-
-        <Button
-            app:layout_marginTopPercent="25%"
-            app:layout_marginLeftPercent="0%"
-            app:layout_heightPercent="20%"
-            android:id="@+id/menu_not_learned_words_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/word_type_not_learned"
-            android:drawableLeft="@android:drawable/ic_input_get"
-            android:layout_weight="5"/>
-
-        <Button
-            app:layout_marginTopPercent="50%"
             app:layout_marginLeftPercent="0%"
             app:layout_heightPercent="20%"
             android:id="@+id/menu_all_words_button"
@@ -45,7 +24,7 @@
             android:layout_weight="5"/>
 
         <Button
-            app:layout_marginTopPercent="75%"
+            app:layout_marginTopPercent="25%"
             app:layout_marginLeftPercent="0%"
             app:layout_heightPercent="20%"
             android:id="@+id/menu_add_words_button"

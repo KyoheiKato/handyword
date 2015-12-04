@@ -16,10 +16,6 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.RegisterWordCardActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardsListActivity;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.menu_weak_words_button)
-    Button weakWordsButton;
-    @Bind(R.id.menu_not_learned_words_button)
-    Button notLearnedWordsButton;
     @Bind(R.id.menu_all_words_button)
     Button allWordsButton;
     @Bind(R.id.menu_add_words_button)
@@ -59,20 +55,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({
-            R.id.menu_weak_words_button,
-            R.id.menu_not_learned_words_button,
             R.id.menu_all_words_button,
             R.id.menu_add_words_button
     })
     public void moveToFuncActivity(Button menuButton) {
         String menuType;
         switch (menuButton.getId()) {
-            case R.id.menu_weak_words_button:
-                menuType = "weak";
-                break;
-            case R.id.menu_not_learned_words_button:
-                menuType = "notLearned";
-                break;
             case R.id.menu_all_words_button:
                 menuType = "all";
                 break;
