@@ -49,11 +49,11 @@ public class WordCardQuestionActivity extends AppCompatActivity {
     public void displayOrHideEnglish(Button displayOrHideButton) {
         if (englishText.getVisibility() == View.VISIBLE) {
             englishText.setVisibility(View.INVISIBLE);
-            displayOrHideButton.setText(getString(R.string.question_word_no_display_button));
+            displayOrHideButton.setText(getString(R.string.question_word_display_button));
         }
         else if (englishText.getVisibility() == View.INVISIBLE) {
             englishText.setVisibility(View.VISIBLE);
-            displayOrHideButton.setText(getString(R.string.question_word_display_button));
+            displayOrHideButton.setText(getString(R.string.question_word_no_display_button));
         }
     }
 
