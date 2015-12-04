@@ -53,7 +53,7 @@ public class WordCardsListActivity extends AppCompatActivity {
     @OnItemClick(R.id.word_card_list)
     public void moveToWordCardDetail(int position) {
         WordCard selectedWordCard = wordCardList.get(position);
-        Intent intent = new Intent(this, WordCardDetailActivity.class);
+        Intent intent = WordCardDetailActivity.createNewIntent(this, selectedWordCard.getId());
         startActivity(intent);
     }
 

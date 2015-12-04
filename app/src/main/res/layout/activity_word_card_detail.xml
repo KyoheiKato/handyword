@@ -27,14 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/back_menu_button"
+            android:id="@+id/back_list_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_marginTopPercent="90%"
             app:layout_marginLeftPercent="25%"
             app:layout_heightPercent="10%"
             app:layout_widthPercent="50%"
-            android:text="メニューに戻る"/>
+            android:text="@string/back_list_activity_text"/>
     </android.support.percent.PercentFrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

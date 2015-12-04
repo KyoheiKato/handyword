@@ -58,6 +58,10 @@ public class WordCardModel {
         return randomWordCard;
     }
 
+    public WordCard findById(int id) {
+        return realmInstance.where(WordCard.class).equalTo(FieldName.id, id).findFirst();
+    }
+
     public List<WordCard> findAll() {
         return realmInstance.where(WordCard.class).findAll();
     }
