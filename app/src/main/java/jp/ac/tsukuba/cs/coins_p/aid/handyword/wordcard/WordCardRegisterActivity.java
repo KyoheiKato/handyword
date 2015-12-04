@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -30,12 +29,6 @@ public class WordCardRegisterActivity extends AppCompatActivity {
     EditText japaneseText;
     @Bind(R.id.edit_text_english)
     EditText englishText;
-    @Bind(R.id.button_translate_en_to_ja)
-    Button translateButton;
-    @Bind(R.id.word_register_button)
-    Button registerButton;
-    @Bind(R.id.back_menu_button)
-    Button backMenuButton;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 

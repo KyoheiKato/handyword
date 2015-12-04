@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.List;
@@ -26,8 +25,6 @@ public class WordCardsListActivity extends AppCompatActivity {
 
     @Bind(R.id.word_card_list)
     ListView wordCardListView;
-    @Bind(R.id.back_menu_button)
-    Button backMenuButton;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 
