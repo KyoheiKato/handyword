@@ -1,5 +1,7 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema;
 
+import org.parceler.Parcel;
+
 import java.util.Date;
 
 import io.realm.RealmObject;
@@ -7,6 +9,7 @@ import io.realm.annotations.Index;
 import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
+@Parcel
 public class WordCard extends RealmObject {
     @PrimaryKey
     private int id;
