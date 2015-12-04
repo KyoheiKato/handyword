@@ -11,6 +11,13 @@
     <string name="sample_text_question">question</string>
     <string name="sample_text_answer">answer</string>
 
+    // Utils
+    <string name="message_ok">OK</string>
+    <string name="message_cancel">Cancel</string>
+
+    <string name="menu_back_text">メニューに戻る</string>
+    <string name="back_list_activity_text">一覧に戻る</string>
+
     <string name="title_chart">学習の記録</string>
     <string name="chart_item_not_learned">まだ覚えていない単語</string>
     <string name="chart_item_learned">覚えた単語</string>
@@ -24,5 +31,12 @@
     <string name="title_activity_edit_word_card">EditWordCardActivity</string>
     <string name="title_activity_word_cards_list">WordCardsListActivity</string>
     <string name="title_activity_word_card_detail">WordCardDetailActivity</string>
+
+    // For register word card activity
+    <string name="register_word_translate_dialog_title">翻訳中</string>
+    <string name="register_word_translate_dialog_message">しばらくお待ちください。</string>
+    <string name="register_word_caution_dialog_title">確認</string>
+    <string name="register_word_caution_dialog_message">作成中の単語帳を削除してもよろしいですか？</string>
+
 
 </resources>

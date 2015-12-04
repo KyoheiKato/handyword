@@ -11,6 +11,7 @@ import android.widget.Button;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.AddWordCardActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardsListActivity;
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+
+        WordCardModel.getInstance().initRealmInstance(getApplicationContext());
     }
 
 

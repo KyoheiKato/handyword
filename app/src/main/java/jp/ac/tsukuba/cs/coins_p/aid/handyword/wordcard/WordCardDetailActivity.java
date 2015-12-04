@@ -56,7 +56,7 @@ public class WordCardDetailActivity extends AppCompatActivity {
             }
         });
 
-        Button menuButton = (Button)findViewById(R.id.button_menu);
+        Button menuButton = (Button)findViewById(R.id.back_menu_button);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -78,7 +78,7 @@
                 android:inputType="text"/>
         </FrameLayout>
         <Button
-            android:id="@+id/button_register"
+            android:id="@+id/word_register_button"
             android:text="登録"
             app:layout_marginTopPercent="65%"
             app:layout_marginLeftPercent="0%"

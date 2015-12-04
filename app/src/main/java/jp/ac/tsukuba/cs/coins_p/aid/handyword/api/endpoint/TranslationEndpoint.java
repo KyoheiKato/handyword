@@ -18,8 +18,9 @@ public class TranslationEndpoint extends Endpoint {
     private static final String ENGLISH = "en";
     private static final String CONTENT_TYPE = "text/plain";
     private static final String CATEGORY = "general";
+    private static final TranslationEndpoint instance = new TranslationEndpoint();
 
-    public TranslationEndpoint() {
+    private TranslationEndpoint() {
         microsoftTranslateApi = new RestAdapter.Builder()
                 .setEndpoint(TRANSLATION_API)
                 .setConverter(new CustomXMLConverter())
@@ -27,6 +28,10 @@ public class TranslationEndpoint extends Endpoint {
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build()
                 .create(MicrosoftTranslateApi.class);
+    }
+
+    public static TranslationEndpoint getInstance() {
+        return instance;
     }
 
     public void translate(final String rawString, final Subscriber<Translation> subscriber) {

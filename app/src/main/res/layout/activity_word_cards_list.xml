@@ -28,7 +28,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/button_menu"
+            android:id="@+id/back_menu_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_marginTopPercent="90%"

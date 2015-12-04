@@ -1,5 +1,6 @@
 package jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 
 
 public class WordCardsListActivity extends AppCompatActivity {
+    private static final String MENU_TYPE = "MenuType";
 
     ListView listView;
 
@@ -28,7 +30,7 @@ public class WordCardsListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button menuButton = (Button)findViewById(R.id.button_menu);
+        Button menuButton = (Button)findViewById(R.id.back_menu_button);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,5 +77,12 @@ public class WordCardsListActivity extends AppCompatActivity {
             wordCardIdArray[i] = wordCardList.get(i).getId();
         }
         return wordCardIdArray;
+    }
+
+    public static Intent createNewIntent(Context context, String menuType) {
+        Intent intent = new Intent(context, WordCardsListActivity.class);
+        intent.putExtra(MENU_TYPE, menuType);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return intent;
     }
 }
