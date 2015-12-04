@@ -1,8 +1,7 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.EditText;
 
 import java.util.Date;
 
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.R;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.endpoint.TranslationEndpoint;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.api.schema.Translation;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;

@@ -1,6 +1,5 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard;
 
-import java.util.Date;
 import lombok.Data;
 
 @Data

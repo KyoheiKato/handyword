@@ -1,18 +1,15 @@
-package jp.ac.tsukuba.cs.coins_p.aid.handyword;
+package jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Filterable;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.DateFormat;
 import java.util.List;
+
+import jp.ac.tsukuba.cs.coins_p.aid.handyword.R;
 
 public class CellAdapter extends BaseAdapter{
     private Context context;

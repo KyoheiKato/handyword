@@ -22,15 +22,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddWordCardActivity"
+            android:name=".wordcard.AddWordCardActivity"
             android:label="@string/title_activity_edit_word_card"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".WordCardsListActivity"
+            android:name=".wordcard.WordCardsListActivity"
             android:label="@string/title_activity_word_cards_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".WordCardDetailActivity"
+            android:name=".wordcard.WordCardDetailActivity"
             android:label="@string/title_activity_word_card_detail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
