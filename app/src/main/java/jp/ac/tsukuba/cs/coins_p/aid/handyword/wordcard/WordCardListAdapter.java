@@ -51,7 +51,7 @@ public class WordCardListAdapter extends BaseAdapter{
         wordCardViewHolder.japaneseText.setText(wordCard.getWord());
     }
 
-    private static class WordCardViewHolder {
+    static class WordCardViewHolder {
         @Bind(R.id.word_card_list_cell_english)
         TextView englishText;
         @Bind(R.id.word_card_list_cell_japanese)

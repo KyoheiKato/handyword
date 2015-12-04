@@ -48,9 +48,9 @@ public class RegisterWordCardActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.button_translate_en_to_ja)
-    public void translateWord(final String rawString){
+    public void translateWord(){
         showProgress(getString(R.string.register_word_translate_dialog_title), getString(R.string.register_word_translate_dialog_message));
-        TranslationEndpoint.getInstance().translate(rawString, new Subscriber<Translation>() {
+        TranslationEndpoint.getInstance().translate(japaneseText.getText().toString(), new Subscriber<Translation>() {
             @Override
             public void onCompleted() {
                 progressDialog.dismiss();
