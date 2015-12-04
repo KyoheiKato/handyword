@@ -35,6 +35,7 @@
     <string name="register_word_caution_dialog_title">確認</string>
     <string name="register_word_caution_dialog_message">作成中の単語帳を削除してもよろしいですか？</string>
     <string name="register_word_caution_error">通信に失敗しました。</string>
+    <string name="register_word_success_register">単語を追加しました。</string>
 
     // For question word card activity
     <string name="question_word_activity_title">出題</string>

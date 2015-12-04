@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -17,6 +18,8 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardRegisterActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardsListActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int REGISTER_WOrD_CARD = 34324;
+
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 
@@ -51,6 +54,21 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REGISTER_WOrD_CARD:
+                if (resultCode == RESULT_OK) {
+                    Toast.makeText(this, getString(R.string.register_word_success_register), Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     @OnClick({
             R.id.menu_all_words_button,
             R.id.menu_add_words_button,
@@ -65,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_add_words_button:
                 intent = new Intent(this, WordCardRegisterActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, REGISTER_WOrD_CARD);
                 return;
             case R.id.menu_question_words_button:
                 intent = new Intent(this, WordCardQuestionActivity.class);

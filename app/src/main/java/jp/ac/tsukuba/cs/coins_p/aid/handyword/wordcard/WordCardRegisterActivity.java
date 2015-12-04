@@ -70,7 +70,7 @@ public class WordCardRegisterActivity extends AppCompatActivity {
     public void registerWordCard() {
         WordCard newWordCard = WordCardModel.createWordCardWith(japaneseText.getText().toString(), englishText.getText().toString());
         WordCardModel.getInstance().saveWordCard(newWordCard);
-        // TODO get by ActivityForResult
+        setResult(RESULT_OK);
         finish();
     }
 
