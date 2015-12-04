@@ -20,8 +20,8 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 import rx.Subscriber;
 
-public class AddWordCardActivity extends AppCompatActivity {
-    private static final String TAG = AddWordCardActivity.class.getSimpleName();
+public class RegisterWordCardActivity extends AppCompatActivity {
+    private static final String TAG = RegisterWordCardActivity.class.getSimpleName();
     private AlertDialog progressDialog;
 
     @Bind(R.id.edit_text_japanese)
