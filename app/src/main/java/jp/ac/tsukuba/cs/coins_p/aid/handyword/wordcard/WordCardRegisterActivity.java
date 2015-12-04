@@ -2,6 +2,7 @@ package jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,9 +22,9 @@ import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.model.WordCardModel;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 import rx.Subscriber;
 
-public class RegisterWordCardActivity extends AppCompatActivity {
-    private static final String TAG = RegisterWordCardActivity.class.getSimpleName();
-    private AlertDialog progressDialog;
+public class WordCardRegisterActivity extends AppCompatActivity {
+    private static final String TAG = WordCardRegisterActivity.class.getSimpleName();
+    private ProgressDialog progressDialog;
 
     @Bind(R.id.edit_text_japanese)
     EditText japaneseText;
@@ -50,6 +52,7 @@ public class RegisterWordCardActivity extends AppCompatActivity {
     @OnClick(R.id.button_translate_en_to_ja)
     public void translateWord(){
         showProgress(getString(R.string.register_word_translate_dialog_title), getString(R.string.register_word_translate_dialog_message));
+        final Context context = this;
         TranslationEndpoint.getInstance().translate(japaneseText.getText().toString(), new Subscriber<Translation>() {
             @Override
             public void onCompleted() {
@@ -59,6 +62,8 @@ public class RegisterWordCardActivity extends AppCompatActivity {
             @Override
             public void onError(Throwable e) {
                 Log.e(TAG, "translate word error", e);
+                progressDialog.dismiss();
+                Toast.makeText(context, getString(R.string.register_word_caution_error), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -83,11 +88,11 @@ public class RegisterWordCardActivity extends AppCompatActivity {
 
     // Utils
     private void showProgress(String dialogTitle, String dialogMessage) {
-        progressDialog = new ProgressDialog.Builder(this)
-                .setTitle(dialogTitle)
-                .setMessage(dialogMessage)
-                .setCancelable(false)
-                .create();
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle(dialogTitle);
+        progressDialog.setMessage(dialogMessage);
+        progressDialog.setCancelable(false);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
     }
 
