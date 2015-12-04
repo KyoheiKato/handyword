@@ -92,7 +92,7 @@ public class RegisterWordCardActivity extends AppCompatActivity {
     }
 
     private void showCautionDialog() {
-        if (japaneseText.getText().toString().isEmpty() || englishText.getText().toString().isEmpty()) {
+        if (!japaneseText.getText().toString().isEmpty() || !englishText.getText().toString().isEmpty()) {
             AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setTitle(getString(R.string.register_word_caution_dialog_title))
                     .setMessage(getString(R.string.register_word_caution_dialog_message))
