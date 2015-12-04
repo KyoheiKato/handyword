@@ -12,6 +12,12 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".wordcard.WordCardRegisterActivity"
     tools:showIn="@layout/activity_edit_word_card">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5" />
+
     <android.support.percent.PercentFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -83,9 +89,5 @@
             android:layout_gravity="center_horizontal"
             android:textSize="30sp"/>
     </android.support.percent.PercentFrameLayout>
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="5">
-    </View>
+
 </LinearLayout>

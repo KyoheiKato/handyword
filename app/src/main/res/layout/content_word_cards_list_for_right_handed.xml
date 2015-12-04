@@ -12,6 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_heightPercent="90%">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
         <ListView
             android:id="@+id/word_card_list"
             android:layout_width="match_parent"
@@ -19,11 +23,7 @@
             android:layout_weight="5">
         </ListView>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5">
-        </View>
+
     </LinearLayout>
 
 </android.support.percent.PercentFrameLayout>

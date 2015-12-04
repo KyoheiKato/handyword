@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/word_card_list_cell_english"
-        android:textSize="48sp"
+        android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="5"/>
@@ -14,7 +14,7 @@
     <TextView
         android:paddingLeft="48sp"
         android:id="@+id/word_card_list_cell_japanese"
-        android:textSize="48sp"
+        android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="5"/>

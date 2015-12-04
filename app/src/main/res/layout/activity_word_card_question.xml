@@ -31,12 +31,14 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
         <android.support.percent.PercentFrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5">
+
             <TextView
-                app:layout_marginTopPercent="5%"
+                app:layout_marginTopPercent="20%"
                 android:id="@+id/before_translate_japanese_text"
                 android:text="日本語"
                 android:textSize="25sp"
@@ -46,7 +48,7 @@
                 android:textAppearance="?attr/textAppearanceListItem" />
 
             <TextView
-                app:layout_marginTopPercent="15%"
+                app:layout_marginTopPercent="40%"
                 android:id="@+id/after_translate_english_text"
                 android:text="英語"
                 android:textSize="25sp"
@@ -55,12 +57,19 @@
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 android:textAppearance="?attr/textAppearanceListItem" />
+        </android.support.percent.PercentFrameLayout>
+
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
 
             <Button
                 android:id="@+id/display_or_hide_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_marginTopPercent="40%"
+                app:layout_marginTopPercent="20%"
                 app:layout_marginLeftPercent="0%"
                 app:layout_heightPercent="15%"
                 android:text="@string/question_word_display_button"
@@ -70,7 +79,7 @@
                 android:id="@+id/next_question_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_marginTopPercent="60%"
+                app:layout_marginTopPercent="40%"
                 app:layout_marginLeftPercent="0%"
                 app:layout_heightPercent="15%"
                 android:text="@string/question_word_next_question_button"
@@ -78,11 +87,7 @@
 
         </android.support.percent.PercentFrameLayout>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5">
-        </View>
+
 
     </LinearLayout>
 
