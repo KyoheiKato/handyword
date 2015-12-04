@@ -6,22 +6,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.AddWordCardActivity;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.wordcard.WordCardsListActivity;
 
 public class MainActivity extends AppCompatActivity {
+    @Bind(R.id.menu_weak_words_button)
+    Button weakWordsButton;
+    @Bind(R.id.menu_not_learned_words_button)
+    Button notLearnedWordsButton;
+    @Bind(R.id.menu_all_words_button)
+    Button allWordsButton;
+    @Bind(R.id.menu_add_words_button)
+    Button addWordsButton;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        initButtons();
+        ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
+        // TODO preference activity
         if (id == R.id.action_settings) {
             return true;
         }
@@ -40,44 +55,33 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void initButtons(){
-        Button weakButton = (Button)findViewById(R.id.button_weak);
-        weakButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WordCardsListActivity.class);
-                intent.putExtra("wordCardsType", "weak");
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    @OnClick({
+            R.id.menu_weak_words_button,
+            R.id.menu_not_learned_words_button,
+            R.id.menu_all_words_button,
+            R.id.menu_add_words_button
+    })
+    public void moveToFuncActivity(Button menuButton) {
+        String menuType;
+        switch (menuButton.getId()) {
+            case R.id.menu_weak_words_button:
+                menuType = "weak";
+                break;
+            case R.id.menu_not_learned_words_button:
+                menuType = "notLearned";
+                break;
+            case R.id.menu_all_words_button:
+                menuType = "all";
+                break;
+            case R.id.menu_add_words_button:
+                Intent intent = new Intent(this, AddWordCardActivity.class);
                 startActivity(intent);
-            }
-        });
-        Button notLearnedButton = (Button)findViewById(R.id.button_not_learned);
-        notLearnedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WordCardsListActivity.class);
-                intent.putExtra("wordCardsType", "notLearned");
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        Button allButton = (Button)findViewById(R.id.button_all);
-        allButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WordCardsListActivity.class);
-                intent.putExtra("wordCardsType", "all");
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        Button addButton = (Button)findViewById(R.id.button_add);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddWordCardActivity.class);
-                startActivity(intent);
-            }
-        });
+                return;
+            default:
+                menuType = null;
+                break;
+        }
+        Intent intent = WordCardsListActivity.createNewIntent(this, menuType);
+        startActivity(intent);
     }
 }
