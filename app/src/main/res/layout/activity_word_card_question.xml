@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".wordcard.WordCardQuestionActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
+            <TextView
+                app:layout_marginTopPercent="20%"
+                android:id="@+id/before_translate_japanese_text"
+                android:text="日本語"
+                android:textSize="25sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                app:layout_marginTopPercent="40%"
+                android:id="@+id/after_translate_english_text"
+                android:text="英語"
+                android:textSize="25sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textAppearance="?attr/textAppearanceListItem" />
+        </android.support.percent.PercentFrameLayout>
+
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
+
+            <Button
+                android:id="@+id/display_or_hide_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_marginTopPercent="20%"
+                app:layout_marginLeftPercent="0%"
+                app:layout_heightPercent="15%"
+                android:text="@string/question_word_display_button"
+                android:textSize="30sp"/>
+
+            <Button
+                android:id="@+id/next_question_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_marginTopPercent="40%"
+                app:layout_marginLeftPercent="0%"
+                app:layout_heightPercent="15%"
+                android:text="@string/question_word_next_question_button"
+                android:textSize="30sp"/>
+
+        </android.support.percent.PercentFrameLayout>
+
+
+
+    </LinearLayout>
+
+    <android.support.percent.PercentFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/back_menu_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_marginTopPercent="90%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="50%"
+            android:text="@string/menu_back_text"/>
+    </android.support.percent.PercentFrameLayout>
+</android.support.design.widget.CoordinatorLayout>
