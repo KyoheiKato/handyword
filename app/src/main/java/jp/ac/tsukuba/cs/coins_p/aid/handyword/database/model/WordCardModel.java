@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 import jp.ac.tsukuba.cs.coins_p.aid.handyword.database.schema.WordCard;
 
 public class WordCardModel {
@@ -31,6 +32,13 @@ public class WordCardModel {
         realmInstance.beginTransaction();
         wordCard.setId(getNextPrimaryKey());
         realmInstance.copyToRealm(wordCard);
+        realmInstance.commitTransaction();
+    }
+
+    public void deleteWordCard(WordCard wordCard) {
+        realmInstance.beginTransaction();
+        RealmResults<WordCard> mResults = realmInstance.where(WordCard.class).equalTo(FieldName.id, wordCard.getId()).findAll();
+        mResults.remove(0);
         realmInstance.commitTransaction();
     }
 

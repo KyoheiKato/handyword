@@ -29,6 +29,12 @@
     <string name="title_activity_word_cards_list">WordCardsListActivity</string>
     <string name="title_activity_word_card_detail">WordCardDetailActivity</string>
 
+    // For delete word card
+    <string name="delete_alert_title">削除の確認</string>
+    <string name="delete_alert_message">を削除してもよろしいですか？</string>
+    <string name="delete_alert_ok">OK</string>
+    <string name="delete_alert_Cancel">Cancel</string>
+
     // For register word card activity
     <string name="register_word_translate_dialog_title">翻訳中</string>
     <string name="register_word_translate_dialog_message">しばらくお待ちください。</string>
